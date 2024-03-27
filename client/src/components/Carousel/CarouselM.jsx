@@ -20,7 +20,7 @@ const CarouselM = () => {
       try {
         // const res = await fetch(API_url_Trending, options);
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
         setMovies(data.trailers);
         setLoading(false);
       } catch (error) {
