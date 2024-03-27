@@ -1,4 +1,4 @@
-import { NavLink } from "../Index";
+import { NavLink ,CarouselM} from "../Index";
 const Home = () => {
   return (
     <>
@@ -6,6 +6,7 @@ const Home = () => {
       <NavLink to="/login">Login</NavLink>
       <br />
       <NavLink to="/register">Register</NavLink>
+      <CarouselM/>
     </>
   );
 };

@@ -19,6 +19,36 @@ form {
   gap: 0.7rem;
   align-items: center;
 }
+nav {
+  height: 100vh;
+  width: 3.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  background-color: var(--primary);
+  .icons.active i {
+    color: var(--accent);
+  }
+  .icons.active {
+    border-right-color: var(--accent);
+  }
+  .icons {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 5px solid transparent;
+    i {
+      font-size: 1.5vw;
+      color: gray;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+  }
+}
 p {
   padding-top: 1rem;
   color: var(--primary);

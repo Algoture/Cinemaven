@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "env": "^0.0.2",
     "firebase": "^10.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
+    "react-multi-carousel": "^2.8.4",
     "react-router-dom": "^6.22.3",
     "sass": "^1.72.0"
   },

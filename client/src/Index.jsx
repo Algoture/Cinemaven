@@ -1,4 +1,6 @@
 import Login from "../src/pages/Login";
+import Nav from './components/Nav';
+import CarouselM from './components/Carousel/CarouselM';
 import Register from "../src/pages/Register";
 import Cinemaven from "../src/pages/Cinemaven";
 import Home from "../src/pages/Home";
@@ -16,11 +18,20 @@ import {
   onAuthStateChanged,
   updateProfile,
   signInWithEmailAndPassword,
+  fetchSignInMethodsForEmail,
   signOut,
 } from "firebase/auth";
 
+
+
+
+
+
+
 // Exportation :
 export {
+  CarouselM,
+  Nav,
   Home,
   useEffect,
   Cinemaven,
@@ -37,6 +48,7 @@ export {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   firebaseAuth,
+  fetchSignInMethodsForEmail,
   signInWithEmailAndPassword,
   signOut,
 };
