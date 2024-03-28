@@ -1,5 +1,5 @@
 const CarouselBox = ({ actualData }) => {
-  const { image,title} = actualData;
+  const { image,title,videoLink} = actualData;
   if (!image) {
     return null;
   }
@@ -9,7 +9,7 @@ const CarouselBox = ({ actualData }) => {
       <div className="wrapper">
         <div className="banner-image">
           <img src={image} alt={title} />
-          <button>Click Me</button>
+          <a href={videoLink} target="_blank"><button>Click</button></a>
         </div>
       </div>
     </div>

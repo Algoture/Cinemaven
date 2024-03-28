@@ -1,6 +1,7 @@
 import Login from "../src/pages/Login";
 import Nav from './components/Nav';
 import CarouselM from './components/Carousel/CarouselM';
+import LandingPage from './pages/LandingPage'
 import Register from "../src/pages/Register";
 import Cinemaven from "../src/pages/Cinemaven";
 import Home from "../src/pages/Home";
@@ -30,6 +31,7 @@ import {
 
 // Exportation :
 export {
+  LandingPage,
   CarouselM,
   Nav,
   Home,
