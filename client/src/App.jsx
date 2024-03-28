@@ -11,6 +11,7 @@ import {
   Home,
   Cinemaven,
   CarouselM,
+  LandingPage
 } from "./Index";
 
 
