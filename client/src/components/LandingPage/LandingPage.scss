@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+.landing {
+    height: 100vh;
+    display: flex;
+    width: calc(100% - 3.5vw);
+
+    .bg-img {
+        height: 100%;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+            position: absolute;
+            overflow-x: hidden;
+        }
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .trending-movie {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 3.5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 10vw;
+        box-sizing: border-box;
+
+        .gradient {
+            height: 100vh;
+            width: 60vw;
+            top: 0;
+            position: absolute;
+            background-color: rgba(13, 14, 15, 0.774);
+            opacity: 100;
+            filter: blur(100px);
+        }
+
+        .content {
+            z-index: 2;
+        }
+    }
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    padding: 5vw;
+
+    .options {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+
+        h2 {
+            font-size: 1.5vw;
+        }
+    }
+
+    .movie {
+        margin-top: 8vh;
+
+        h1 {
+            font-size: 4vw;
+        }
+
+        span {
+            font-size: 1vw;
+            margin-top: 2vh;
+        }
+
+        p {
+            font-size: 1vw;
+            margin-top: 2vh;
+        }
+    }
+
+    .watch {
+        margin-top: 2vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .watch-now {
+            padding: 0.5vw;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .trailer-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+
+            button {
+                padding: 0.5vw;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.login {
+    height: 10vh;
+    width: 10vw;
+
+    button {
+        padding: 1vw 1.5vw;
+        border: none;
+        border-radius: 5px;
+        background-color: yellow;
+        z-index: 2;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        font-weight: 700;
+        font-size: 1vw;
+    }
+}
