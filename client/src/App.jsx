@@ -7,10 +7,8 @@ import {
   Register,
   createBrowserRouter,
   RouterProvider,
-  Nav,
   Home,
   Cinemaven,
-  CarouselM,
   LandingPage
 } from "./Index";
 
@@ -21,11 +19,9 @@ function App() {
     { path: "/", element: <LandingPage /> },
     { path: "/cinemaven", element: <Cinemaven /> },
     { path: "/register", element: <Register /> },
-    { path: "/carousel", element: <CarouselM /> },
   ]);
   return (
     <>
-      {/* <Nav /> */}
       <RouterProvider router={appRouter} />
     </>
   );

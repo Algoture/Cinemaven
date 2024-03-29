@@ -1,30 +1,42 @@
-import { Nav } from "../Index";
+import { NavLink, CarouselM, Nav } from "../Index";
 import "../css/LandingPage.scss";
 
 const LandingPage = () => {
   return (
     <>
-    <Nav/>
+      <Nav />
       <div className="landing">
         <div className="bg-img">
-          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+          <img src="Shaitaan.png" alt="" />
         </div>
 
         <div className="main">
           <div className="trending-movie">
-            <div className='gradient'></div>
+            <div className="gradient"></div>
 
             <div className="content">
               <div className="options">
-                <h2>All</h2>
-                <h2>TV Shows</h2>
-                <h2>More</h2>
+                <NavLink to="/all" className="navlinks">
+                  All
+                </NavLink>
+                <NavLink to="/tvshows" className="navlinks">
+                  TV Shows
+                </NavLink>
+                <NavLink to="/all" className="navlinks">
+                  More
+                </NavLink>
               </div>
 
               <div className="movie">
-                <h1>Movie name</h1>
-                <div className="year"><span>2024</span></div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam saepe repellat ipsum officiis, pariatur temporibus obcaecati tempore quia voluptate. Eligendi nulla dolores beatae voluptatem itaque tenetur in neque voluptatibus ipsa.</p>
+                <h1>SHAITAN</h1>
+                <div className="year">
+                  <p>2024</p>
+                </div>
+                <p>
+                  A timeless tale of battle between good and evil with a family
+                  embodying the forces of righteousness while a man symbolizes
+                  malevolence.
+                </p>
               </div>
 
               <div className="watch">
@@ -38,20 +50,16 @@ const LandingPage = () => {
             </div>
           </div>
 
-
           <div className="login">
-            <button className='login-btn'>Log In</button>
+            <NavLink to="/login">
+              <button className="login-btn">Log In</button>
+            </NavLink>
           </div>
-
         </div>
-
-
-
-
       </div>
+      <CarouselM />
     </>
+  );
+};
 
-  )
-}
-
-export default LandingPage
+export default LandingPage;

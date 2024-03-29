@@ -39,7 +39,7 @@ const Register = () => {
   return (
     <>
       <div className="registrationPage">
-        <NavLink to="/  ">Home </NavLink>
+        <NavLink to="/">Home </NavLink>
         <div className="registerCard">
           <form id="signupForm" onSubmit={registration}>
             <p>Sign Up</p>
