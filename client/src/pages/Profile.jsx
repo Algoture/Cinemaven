@@ -4,7 +4,7 @@ const Profile = () => {
   return (
     <>
       <Nav />
-      <div>Profile</div>
+      <div>Profile Picture</div>
     </>
   );
 };

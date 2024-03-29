@@ -19,9 +19,9 @@ const CarouselM = () => {
     const fetchData = async () => {
       try {
         // const res = await fetch(API_url_Trending, options);
-        const data = await res.json();
+        // const data = await res.json();
         // console.log(data);
-        setMovies(data.trailers);
+        // setMovies(data.trailers);
         setLoading(false);
       } catch (error) {
         console.log(error);
