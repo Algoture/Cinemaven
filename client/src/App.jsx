@@ -18,7 +18,7 @@ import {
 function App() {
   const appRouter = createBrowserRouter([
     { path: "/login", element: <Login /> },
-    { path: "/", element: <Home /> },
+    { path: "/", element: <LandingPage /> },
     { path: "/cinemaven", element: <Cinemaven /> },
     { path: "/register", element: <Register /> },
     { path: "/carousel", element: <CarouselM /> },
