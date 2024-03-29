@@ -3,7 +3,6 @@ import "../css/LandingPage.scss";
 
 const LandingPage = () => {
   return (
-
     <>
     <Nav/>
       <div className="landing">
