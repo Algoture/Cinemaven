@@ -10,36 +10,43 @@ const Nav = () => {
 
   return (
     <nav>
-      <div
-        className={`icons ${activeIcon === 0 ? "active" : ""}`}
-        onClick={() => iconClick(0)}
-      >
-        <NavLink to="/">
+      <NavLink to="/">
+        <div
+          className={`icons ${activeIcon === 0 ? "active" : ""}`}
+          onClick={() => iconClick(0)}
+        >
+
           <i className="ri-home-4-fill"></i>
-        </NavLink>
-      </div>
+
+        </div>
+      </NavLink>
       <div
         className={`icons ${activeIcon === 1 ? "active" : ""}`}
         onClick={() => iconClick(1)}
       >
         <i className="ri-search-2-line"></i>
       </div>
-      <div
-        className={`icons ${activeIcon === 2 ? "active" : ""}`}
-        onClick={() => iconClick(2)}
-      >
-        <NavLink to="/favourite">
+      <NavLink to="/favourite">
+        <div
+          className={`icons ${activeIcon === 2 ? "active" : ""}`}
+          onClick={() => iconClick(2)}
+        >
+
           <i className="ri-folder-5-fill"></i>
-        </NavLink>
-      </div>
-      <div
-        className={`icons ${activeIcon === 3 ? "active" : ""}`}
-        onClick={() => iconClick(3)}
-      >
-        <NavLink to="/profile">
+
+        </div>
+      </NavLink>
+
+      <NavLink to="/profile">
+        <div
+          className={`icons ${activeIcon === 3 ? "active" : ""}`}
+          onClick={() => iconClick(3)}
+        >
+
           <i className="ri-account-circle-line"></i>
-        </NavLink>
-      </div>
+
+        </div>
+      </NavLink>
     </nav>
   );
 };
