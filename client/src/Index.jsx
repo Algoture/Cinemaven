@@ -4,7 +4,6 @@ import CarouselM from './components/Carousel/CarouselM';
 import LandingPage from './pages/LandingPage'
 import Register from "../src/pages/Register";
 import Cinemaven from "../src/pages/Cinemaven";
-import Home from "../src/pages/Home";
 import toast, { Toaster } from "react-hot-toast";
 import { firebaseAuth } from "./utils/firebase";
 import { useState ,useEffect} from "react";
@@ -22,6 +21,8 @@ import {
   fetchSignInMethodsForEmail,
   signOut,
 } from "firebase/auth";
+import Favourite from "./pages/Favourite";
+import Profile from "./pages/Profile";
 
 
 
@@ -31,10 +32,11 @@ import {
 
 // Exportation :
 export {
+  Profile,
+  Favourite,
   LandingPage,
   CarouselM,
   Nav,
-  Home,
   useEffect,
   Cinemaven,
   createBrowserRouter,

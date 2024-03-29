@@ -7,11 +7,11 @@ import {
   Register,
   createBrowserRouter,
   RouterProvider,
-  Home,
   Cinemaven,
-  LandingPage
+  Profile,
+  Favourite,
+  LandingPage,
 } from "./Index";
-
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -19,6 +19,8 @@ function App() {
     { path: "/", element: <LandingPage /> },
     { path: "/cinemaven", element: <Cinemaven /> },
     { path: "/register", element: <Register /> },
+    { path: "/favourite", element: <Favourite /> },
+    { path: "/profile", element: <Profile /> },
   ]);
   return (
     <>

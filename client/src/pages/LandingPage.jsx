@@ -4,7 +4,7 @@ import "../css/LandingPage.scss";
 const LandingPage = () => {
   return (
     <>
-      <Nav />
+      <Nav/>
       <div className="landing">
         <div className="bg-img">
           <img src="Shaitaan.png" alt="" />
@@ -22,7 +22,7 @@ const LandingPage = () => {
                 <NavLink to="/tvshows" className="navlinks">
                   TV Shows
                 </NavLink>
-                <NavLink to="/all" className="navlinks">
+                <NavLink to="/more" className="navlinks">
                   More
                 </NavLink>
               </div>
