@@ -38,3 +38,8 @@ To Start the Server:
 ```bash
 npm start
 ```
+**Usage**
+1.  **Sign Up or Log In**: Create an account or log in to your existing account.
+2.  **Browse Content**: Explore the vast library of movies and shows.
+3.  **Add to Wish List**: Save your favorite movies to your wish list for easy access later.
+4.  **Watch Content**: Click on a title to start watching immediately.
