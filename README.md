@@ -1,5 +1,4 @@
 # Cinemaven
-![Cinemaven Logo](client/public/Logo.png)
 Cinemaven is an innovative OTT (Over-The-Top) platform designed to revolutionize the way you experience movies and entertainment. With a vast library of movies, TV shows, and original content, Cinemaven brings the cinematic experience directly to your fingertips.
 ## Features
 
