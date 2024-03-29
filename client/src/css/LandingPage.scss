@@ -9,7 +9,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 button {
@@ -17,9 +17,13 @@ button {
 }
 
 .landing {
-    height: 100vh;
+    height: 60vh;
     display: flex;
-    width: calc(100% - 3.5vw);
+    align-items: top;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 
     .bg-img {
         height: 100%;
@@ -31,14 +35,12 @@ button {
             object-fit: cover;
             z-index: -1;
             position: absolute;
-            overflow-x: hidden;
         }
     }
 
     .main {
         height: 100%;
         width: 100%;
-        z-index: 1;
     }
 
     .trending-movie {
@@ -71,7 +73,7 @@ button {
     }
 }
 
-.content {
+.landing .content {
     height: 100vh;
     width: 100%;
     top: 0;
