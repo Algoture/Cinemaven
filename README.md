@@ -4,11 +4,15 @@
 **Installation Instructions :**
 ```bash
 git clone https://github.com/Algoture/Cinemaven.git
+
 ```bash
-cd Cinemaven 
+cd Cinemaven
+
 ```bash
 cd client
+
 ```bash
 npm install
+
 ```bash
 npm run dev
