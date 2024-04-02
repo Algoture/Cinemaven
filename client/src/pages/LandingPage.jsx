@@ -9,10 +9,10 @@ const LandingPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(API_url_Trending, options);
-        const data = await res.json();
+        // const res = await fetch(API_url_Trending, options);
+        // const data = await res.json();
         // console.log(data);
-        setMovies(data.trailers);
+        // setMovies(data.trailers);
       } catch (error) {
         console.log(error);
       }
@@ -53,7 +53,7 @@ const LandingPage = () => {
             customTransition="all 1s"
             infinite={true}
             transitionDuration={500}
-            removeArrowOnDeviceType={["mobile","desktop"]}
+            removeArrowOnDeviceType={["mobile", "desktop"]}
           >
             {movies.map((phutu, index) => (
               <img key={index} src={phutu.image} alt="" />
@@ -108,7 +108,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      {/* <CarouselM /> */}
+      <CarouselM />
     </>
   );
 };

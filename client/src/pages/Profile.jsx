@@ -1,10 +1,11 @@
 import { Nav } from "../Index";
+import "../css/Pages.scss"
 
 const Profile = () => {
   return (
     <>
       <Nav />
-      <div>Profile Picture</div>
+      <div id="Profile">Profile Picture</div>
     </>
   );
 };
