@@ -9,8 +9,8 @@ const LandingPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(API_url_Trending, options);
-        const data = await res.json();
+        // const res = await fetch(API_url_Trending, options);
+        // const data = await res.json();
         // console.log(data);
         setMovies(data.trailers);
       } catch (error) {
@@ -108,7 +108,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      {/* <CarouselM /> */}
+      <CarouselM />
     </>
   );
 };
