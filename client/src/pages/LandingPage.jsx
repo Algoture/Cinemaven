@@ -9,8 +9,9 @@ const LandingPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await fetch(API_url_Trending, options);
-        // const data = await res.json();
+        const res = await fetch(API_url_Trending, options);
+        const data = await res.json();
+        // console.log(data);
         setMovies(data.trailers);
       } catch (error) {
         console.log(error);
@@ -20,20 +21,20 @@ const LandingPage = () => {
   }, []);
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 1000, min: 1000 },
+      breakpoint: { max: 4000, min: 3000 },
       items: 1,
     },
     desktop: {
-      breakpoint: { max: 1000, min: 1000 },
+      breakpoint: { max: 3000, min: 1024 },
       items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 1,
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
 
@@ -44,13 +45,15 @@ const LandingPage = () => {
         <div className="bg-img">
           <Carousel
             responsive={responsive}
+            showDots={false}
             autoPlay={true}
+            partialVisible={false}
             containerClass="carousel-container"
-            autoPlaySpeed={7000}
-            // customTransition="all 5s"
+            autoPlaySpeed={5000}
+            customTransition="all 1s"
             infinite={true}
-            transitionDuration={100}
-            removeArrowOnDeviceType={["mobile", "desktop"]}
+            transitionDuration={500}
+            removeArrowOnDeviceType={["mobile","desktop"]}
           >
             {movies.map((phutu, index) => (
               <img key={index} src={phutu.image} alt="" />
