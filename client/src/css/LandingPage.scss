@@ -13,16 +13,20 @@ body {
   position: relative;
   overflow: hidden;
   .bg-img {
-    height: 120%;
+    height: 100%;
     width: 100%;
     position: fixed;
-
-    img {
-      height: 120%;
+    top: 0;
+    left: 0;
+    .carousel-container {
       width: 100%;
-      z-index: -1;
-      position: absolute;
-      right: 0;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      img {
+        height: 110vh;
+        width: 100vw;
+      }
     }
   }
 
@@ -64,13 +68,13 @@ body {
         margin-top: 8vh;
         h1 {
           font-size: 4rem;
-          letter-spacing: -.2rem;
+          letter-spacing: -0.2rem;
           font-family: "Poppins";
         }
-        .year{
-            p{
-                font-size: 1rem;
-            }
+        .year {
+          p {
+            font-size: 1rem;
+          }
         }
         p {
           font-size: 0.85rem;

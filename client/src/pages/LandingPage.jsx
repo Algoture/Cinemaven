@@ -1,13 +1,61 @@
+import { useState, useEffect } from "react";
 import { NavLink, CarouselM, Nav } from "../Index";
 import "../css/LandingPage.scss";
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { API_url_Trending, options } from "../utils/Constants";
 const LandingPage = () => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // const res = await fetch(API_url_Trending, options);
+        // const data = await res.json();
+        setMovies(data.trailers);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 1000, min: 1000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 1000, min: 1000 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
     <>
-      <Nav/>
+      <Nav />
       <div className="landing">
         <div className="bg-img">
-          <img src="Shaitaan.png" alt="" />
+          <Carousel
+            responsive={responsive}
+            autoPlay={true}
+            containerClass="carousel-container"
+            autoPlaySpeed={7000}
+            // customTransition="all 5s"
+            infinite={true}
+            transitionDuration={100}
+            removeArrowOnDeviceType={["mobile", "desktop"]}
+          >
+            {movies.map((phutu, index) => (
+              <img key={index} src={phutu.image} alt="" />
+            ))}
+          </Carousel>
         </div>
 
         <div className="main">
@@ -57,7 +105,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <CarouselM />
+      {/* <CarouselM /> */}
     </>
   );
 };

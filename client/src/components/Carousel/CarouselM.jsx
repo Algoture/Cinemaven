@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
-import { API_url_Trending ,options} from "../../utils/Constants";
+import { API_url_Trending, options } from "../../utils/Constants";
 
 const CarouselM = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const res = await fetch(API_url_Trending, options);
         // const data = await res.json();
-        // console.log(data);
+        console.log(data);
         // setMovies(data.trailers);
         setLoading(false);
       } catch (error) {
@@ -46,7 +45,9 @@ const CarouselM = () => {
   return (
     <>
       {loading ? (
-        <div className="loading"><div className="loader"></div></div>
+        <div className="loading">
+          <div className="loader"></div>
+        </div>
       ) : (
         <Carousel
           responsive={responsive}
@@ -62,7 +63,32 @@ const CarouselM = () => {
           removeArrowOnDeviceType={["mobile"]}
           swipeable={true}
         >
-          {movies.length > 0 &&
+          {movies.slice(0, 10).length > 0 &&
+            movies.map((curElem) => {
+              return <CarouselBox key={curElem} actualData={curElem} />;
+            })}
+        </Carousel>
+      )}
+      {loading ? (
+        <div className="loading">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        <Carousel
+          responsive={responsive}
+          showDots={false}
+          draggable={true}
+          autoPlay={true}
+          partialVisible
+          containerClass="container"
+          autoPlaySpeed={2000}
+          customTransition="all 1s"
+          infinite={true}
+          transitionDuration={500}
+          removeArrowOnDeviceType={["mobile"]}
+          swipeable={true}
+        >
+          {movies.slice(10, 20).length > 0 &&
             movies.map((curElem) => {
               return <CarouselBox key={curElem} actualData={curElem} />;
             })}
