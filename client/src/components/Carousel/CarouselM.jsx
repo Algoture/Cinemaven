@@ -63,8 +63,8 @@ const CarouselM = () => {
           removeArrowOnDeviceType={["mobile"]}
           swipeable={true}
         >
-          {movies.slice(0, 10).length > 0 &&
-            movies.map((curElem) => {
+          {movies.length > 0 &&
+            movies.slice(0,10).map((curElem) => {
               return <CarouselBox key={curElem} actualData={curElem} />;
             })}
         </Carousel>
@@ -88,8 +88,8 @@ const CarouselM = () => {
           removeArrowOnDeviceType={["mobile"]}
           swipeable={true}
         >
-          {movies.slice(10, 20).length > 0 &&
-            movies.map((curElem) => {
+          {movies.length > 0 &&
+            movies.slice(10,20).map((curElem) => {
               return <CarouselBox key={curElem} actualData={curElem} />;
             })}
         </Carousel>
