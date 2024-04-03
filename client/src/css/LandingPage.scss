@@ -24,7 +24,7 @@ body {
       position: relative;
       z-index: 1;
       img {
-        height: 110vh;
+        height: 100vh;
         width: 100vw;
       }
     }
@@ -54,7 +54,6 @@ body {
       top: 0;
       position: absolute;
       padding: 5vw;
-
       .options {
         display: flex;
         align-items: center;
@@ -73,7 +72,7 @@ body {
         }
         .year {
           p {
-            font-size: 1rem;
+            font-size: 2rem;
           }
         }
         p {

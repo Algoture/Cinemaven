@@ -9,7 +9,7 @@ const CarouselBox = ({ actualData }) => {
       <div className="wrapper">
         <div className="banner-image">
           <img src={image} alt={title} />
-          <a href={videoLink} target="_blank"><button>Click</button></a>
+          <a href={videoLink} target="_blank"><button>Trailer</button></a>
         </div>
       </div>
     </div>

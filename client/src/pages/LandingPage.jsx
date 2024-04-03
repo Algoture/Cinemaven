@@ -6,6 +6,8 @@ import "react-multi-carousel/lib/styles.css";
 import { API_url_Trending, options } from "../utils/Constants";
 const LandingPage = () => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -13,6 +15,7 @@ const LandingPage = () => {
         // const data = await res.json();
         // console.log(data);
         // setMovies(data.trailers);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -43,24 +46,30 @@ const LandingPage = () => {
       <Nav />
       <div className="landing">
         <div className="bg-img">
-          <Carousel
-            responsive={responsive}
-            showDots={false}
-            autoPlay={true}
-            partialVisible={false}
-            containerClass="carousel-container"
-            autoPlaySpeed={5000}
-            customTransition="all 1s"
-            infinite={true}
-            transitionDuration={500}
-            removeArrowOnDeviceType={["mobile", "desktop"]}
-          >
-            {movies.map((phutu, index) => (
-              <img key={index} src={phutu.image} alt="" />
-            ))}
-          </Carousel>
+          {loading ? (
+            <div className="loading">
+              <div className="loader"></div>
+            </div>
+          ) : (
+            <Carousel
+              responsive={responsive}
+              showDots={false}
+              autoPlay={true}
+              partialVisible={false}
+              containerClass="carousel-container"
+              autoPlaySpeed={5000}
+              customTransition="all 1s"
+              pauseOnHover={false}
+              infinite={true}
+              transitionDuration={500}
+              removeArrowOnDeviceType={["mobile", "desktop"]}
+            >
+              {movies.slice(0, 5).map((phutu, index) => (
+                <img key={index} src={phutu.image} alt="" />
+              ))}
+            </Carousel>
+          )}
         </div>
-
         <div className="main">
           <div className="trending-movie">
             <div className="gradient"></div>
@@ -79,15 +88,32 @@ const LandingPage = () => {
               </div>
 
               <div className="movie">
-                <h1>SHAITAN</h1>
-                <div className="year">
-                  <p>2024</p>
-                </div>
-                <p>
-                  A timeless tale of battle between good and evil with a family
-                  embodying the forces of righteousness while a man symbolizes
-                  malevolence.
-                </p>
+                {loading ? (
+                  <div className="loading">
+                    <div className="loader"></div>
+                  </div>
+                ) : (
+                  <Carousel
+                    responsive={responsive}
+                    showDots={false}
+                    autoPlay={true}
+                    partialVisible={false}
+                    containerClass="movie"
+                    pauseOnHover={false}
+                    autoPlaySpeed={5000}
+                    customTransition="all 1s"
+                    infinite={true}
+                    transitionDuration={500}
+                    removeArrowOnDeviceType={["mobile", "desktop"]}
+                  >
+                    {movies.slice(0, 5).map((name, index) => (
+                      <>
+                        <h1 key={index}>{name.title}</h1>
+                        <p key={index}>{name.releaseDate}</p>
+                      </>
+                    ))}
+                  </Carousel>
+                )}
               </div>
 
               <div className="watch">

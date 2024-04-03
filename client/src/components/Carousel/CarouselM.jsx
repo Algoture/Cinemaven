@@ -44,56 +44,66 @@ const CarouselM = () => {
 
   return (
     <>
-      {loading ? (
-        <div className="loading">
-          <div className="loader"></div>
+      <div className="section1">
+        <h1 className="Trending">Trending Now</h1>
+        <div className="try">
+          {loading ? (
+            <div className="loading">
+              <div className="loader"></div>
+            </div>
+          ) : (
+            <Carousel
+              responsive={responsive}
+              showDots={false}
+              draggable={true}
+              autoPlay={true}
+              partialVisible
+              containerClass="container"
+              autoPlaySpeed={2000}
+              customTransition="all 1s"
+              infinite={true}
+              transitionDuration={500}
+              removeArrowOnDeviceType={["mobile"]}
+              swipeable={true}
+            >
+              {movies.length > 0 &&
+                movies.slice(0, 10).map((curElem) => {
+                  return <CarouselBox key={curElem} actualData={curElem} />;
+                })}
+            </Carousel>
+          )}
         </div>
-      ) : (
-        <Carousel
-          responsive={responsive}
-          showDots={false}
-          draggable={true}
-          autoPlay={true}
-          partialVisible
-          containerClass="container"
-          autoPlaySpeed={2000}
-          customTransition="all 1s"
-          infinite={true}
-          transitionDuration={500}
-          removeArrowOnDeviceType={["mobile"]}
-          swipeable={true}
-        >
-          {movies.length > 0 &&
-            movies.slice(0,10).map((curElem) => {
-              return <CarouselBox key={curElem} actualData={curElem} />;
-            })}
-        </Carousel>
-      )}
-      {loading ? (
-        <div className="loading">
-          <div className="loader"></div>
+      </div>
+      <div className="section1">
+        <h1 className="Trending">Popular :</h1>
+        <div className="try">
+          {loading ? (
+            <div className="loading">
+              <div className="loader"></div>
+            </div>
+          ) : (
+            <Carousel
+              responsive={responsive}
+              showDots={false}
+              draggable={true}
+              autoPlay={true}
+              partialVisible
+              containerClass="container"
+              autoPlaySpeed={2000}
+              customTransition="all 1s"
+              infinite={true}
+              transitionDuration={500}
+              removeArrowOnDeviceType={["mobile"]}
+              swipeable={true}
+            >
+              {movies.length > 0 &&
+                movies.slice(10, 20).map((curElem) => {
+                  return <CarouselBox key={curElem} actualData={curElem} />;
+                })}
+            </Carousel>
+          )}
         </div>
-      ) : (
-        <Carousel
-          responsive={responsive}
-          showDots={false}
-          draggable={true}
-          autoPlay={true}
-          partialVisible
-          containerClass="container"
-          autoPlaySpeed={2000}
-          customTransition="all 1s"
-          infinite={true}
-          transitionDuration={500}
-          removeArrowOnDeviceType={["mobile"]}
-          swipeable={true}
-        >
-          {movies.length > 0 &&
-            movies.slice(10,20).map((curElem) => {
-              return <CarouselBox key={curElem} actualData={curElem} />;
-            })}
-        </Carousel>
-      )}
+      </div>
     </>
   );
 };
