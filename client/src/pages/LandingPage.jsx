@@ -3,32 +3,15 @@ import { NavLink, CarouselM, Nav } from "../Index";
 import "../css/LandingPage.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { API_url_Trending, options } from "../utils/Constants";
 const LandingPage = () => {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // const res = await fetch(API_url_Trending, options);
-        // const data = await res.json();
-        // console.log(data);
-        // setMovies(data.trailers);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    fetchData();
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
