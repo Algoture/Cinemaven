@@ -1,3 +1,8 @@
+:root {
+  --primary: #1d1d1d;
+  --secondary: #fff;
+  --accent: #ffe24b;
+}
 body {
   height: 100%;
   width: 100%;
@@ -13,6 +18,14 @@ body {
   position: relative;
   overflow: hidden;
   .bg-img {
+    .carousel-bgimg {
+      height: 100%;
+      width: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
     height: 100%;
     width: 100%;
     position: fixed;
@@ -24,7 +37,8 @@ body {
       position: relative;
       z-index: 1;
       img {
-        height: 100vh;
+        margin-left: 4vw;
+        height: 105vh;
         width: 100vw;
       }
     }
@@ -36,11 +50,11 @@ body {
   }
 
   .trending-movie {
-    height: 100%;
+    height: 90%;
     width: 50%;
     position: absolute;
     top: 0;
-    left: 3.5vw;
+    left: 4vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,15 +80,12 @@ body {
       .movie {
         margin-top: 8vh;
         h1 {
-          font-size: 4rem;
+          font-size: 3.5rem;
+          color: var(--secondary);
           letter-spacing: -0.2rem;
           font-family: "Poppins";
         }
-        .year {
-          p {
-            font-size: 2rem;
-          }
-        }
+
         p {
           font-size: 0.85rem;
           text-align: left;
@@ -98,12 +109,12 @@ body {
 
     .gradient {
       height: 100vh;
-      width: 90vw;
+      width: 20vw;
       top: 0;
       position: absolute;
-      background-color: rgba(13, 14, 15, 0.774);
+      background-color: rgba(255, 255, 255, 0.913);
       opacity: 2;
-      filter: blur(70px);
+      filter: blur(200px);
     }
 
     .content {

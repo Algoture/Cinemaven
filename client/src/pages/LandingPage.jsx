@@ -7,6 +7,7 @@ import { API_url_Trending, options } from "../utils/Constants";
 const LandingPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +21,17 @@ const LandingPage = () => {
         console.log(error);
       }
     };
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     fetchData();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   const responsive = {
     superLargeDesktop: {
@@ -46,34 +57,48 @@ const LandingPage = () => {
       <Nav />
       <div className="landing">
         <div className="bg-img">
-          {loading ? (
-            <div className="loading">
-              <div className="loader"></div>
-            </div>
-          ) : (
-            <Carousel
-              responsive={responsive}
-              showDots={false}
-              autoPlay={true}
-              partialVisible={false}
-              containerClass="carousel-container"
-              autoPlaySpeed={5000}
-              customTransition="all 1s"
-              pauseOnHover={false}
-              infinite={true}
-              transitionDuration={500}
-              removeArrowOnDeviceType={["mobile", "desktop"]}
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            partialVisible={false}
+            containerClass="movie"
+            pauseOnHover={false}
+            autoPlaySpeed={5000}
+            customTransition="all 1s"
+            infinite={true}
+            transitionDuration={500}
+            removeArrowOnDeviceType={["mobile", "desktop"]}
+          >
+            <div
+              className="carousel-bgimg"
+              style={{ filter: `blur(${scrollPosition * 0.05}px)` }}
             >
-              {movies.slice(0, 5).map((phutu, index) => (
-                <img key={index} src={phutu.image} alt="" />
-              ))}
-            </Carousel>
-          )}
+              <img src="kingdom-of-the-planet-of-the-apes.jpg" alt="" />
+            </div>
+            <div
+              className="carousel-bgimg"
+              style={{ filter: `blur(${scrollPosition * 0.05}px)` }}
+            >
+              <img src="terminator.jpg" alt="" />
+            </div>
+            <div
+              className="carousel-bgimg"
+              style={{ filter: `blur(${scrollPosition * 0.05}px)` }}
+            >
+              <img src="kung fu panda 4.jpg" alt="" />
+            </div>
+            <div
+              className="carousel-bgimg"
+              style={{ filter: `blur(${scrollPosition * 0.05}px)` }}
+            >
+              <img src="dune.jpg" alt="" />
+            </div>
+          </Carousel>
         </div>
         <div className="main">
           <div className="trending-movie">
-            <div className="gradient"></div>
-
+            {scrollPosition === 0 ? <div className="gradient"></div> : null}
             <div className="content">
               <div className="options">
                 <NavLink to="/all" className="navlinks">
@@ -88,37 +113,58 @@ const LandingPage = () => {
               </div>
 
               <div className="movie">
-                {loading ? (
-                  <div className="loading">
-                    <div className="loader"></div>
+                <Carousel
+                  responsive={responsive}
+                  showDots={false}
+                  autoPlay={true}
+                  partialVisible={false}
+                  containerClass="movie"
+                  pauseOnHover={false}
+                  autoPlaySpeed={5000}
+                  customTransition="all 1s"
+                  infinite={true}
+                  transitionDuration={500}
+                  removeArrowOnDeviceType={["mobile", "desktop"]}
+                >
+                  <div>
+                    <h1 style={{ color: "#dc0073" }}>
+                      Kingdom of the planet of the apes
+                    </h1>
+                    <p>
+                      In a future where humans and intelligent apes coexist
+                      precariously, young leader Nova must navigate rising
+                      tensions to prevent a catastrophic war.
+                    </p>
                   </div>
-                ) : (
-                  <Carousel
-                    responsive={responsive}
-                    showDots={false}
-                    autoPlay={true}
-                    partialVisible={false}
-                    containerClass="movie"
-                    pauseOnHover={false}
-                    autoPlaySpeed={5000}
-                    customTransition="all 1s"
-                    infinite={true}
-                    transitionDuration={500}
-                    removeArrowOnDeviceType={["mobile", "desktop"]}
-                  >
-                    {movies.slice(0, 5).map((name, index) => (
-                      <>
-                        <h1 key={index}>{name.title}</h1>
-                        <p key={index}>{name.releaseDate}</p>
-                      </>
-                    ))}
-                  </Carousel>
-                )}
+                  <div>
+                    <h1>Terminator</h1>
+                    <p>
+                      A cyborg assassin targets the mother of a future
+                      resistance leader, triggering a race against time as a
+                      soldier from the future is deployed to protect her.
+                    </p>
+                  </div>
+                  <div>
+                    <h1>Kung Fu Panda 4</h1>
+                    <p>
+                      Po, the beloved dragon warrior, faces a new challenge when
+                      a powerful villain threatens the peace of the Valley of
+                      Peace, leading him on an epic journey of self-discovery
+                      and kung fu mastery.
+                    </p>
+                  </div>
+                  <div>
+                    <h1>Dune</h1>
+                    <p>
+                      In a future of scarce resources, a young noble navigates
+                      political intrigue and desert perils to safeguard his
+                      family's legacy.
+                    </p>
+                  </div>
+                </Carousel>
               </div>
 
               <div className="watch">
-                <button className="watch-now">Watch</button>
-
                 <div className="trailer-button">
                   <button className="trailer">Trailer</button>
                   <button className="add-list">Add List</button>
