@@ -1,4 +1,5 @@
 import { Nav } from "../Index";
+import "../css/Pages.scss";
 
 const Favourite = () => {
   return (

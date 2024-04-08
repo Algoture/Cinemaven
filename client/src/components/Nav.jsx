@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const activeOpacity = 1;
-  const inactiveOpacity = 0.14;
+  const inactiveOpacity = 0.5;
   return (
     <nav>
       <div className="home-nav">
-        <NavLink to="/" activeclassname="active">
+        <NavLink to="/cinemaven" activeclassname="active">
           <svg
             width="28"
             height="28"

@@ -1,14 +1,9 @@
-import {
-  firebaseAuth,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  updateProfile,
-  useState,
-  NavLink,
-  toast,
-  Toaster,
-  useNavigate,
-} from "../Index";
+import { firebaseAuth } from "../Index";
+import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import "../css/Pages.scss";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -27,19 +22,18 @@ const Register = () => {
       toast.success("Account Created  Successfully!");
       navigate("/login");
     } catch (error) {
-      toast.error(error);
+      const errorMessage = error.message;
+      if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
+        toast.error("Email already in use");
+      }
     }
     setEmail("");
     setName("");
     setPassword("");
   }
-  onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (currentUser) navigate("/cinemaven");
-  });
   return (
     <>
       <div className="registrationPage">
-        <NavLink to="/">Home </NavLink>
         <div className="registerCard">
           <form id="signupForm" onSubmit={registration}>
             <p>Sign Up</p>

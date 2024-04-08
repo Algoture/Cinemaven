@@ -9,7 +9,7 @@ body {
   // overflow-x: hidden;
 }
 
-.landing {
+.cinemaven {
   height: 100vh;
   display: flex;
   align-items: top;
@@ -75,10 +75,13 @@ body {
         .navlinks {
           color: white;
         }
+        .navlinks:hover{
+          color: var(--accent);
+        }
       }
-
       .movie {
-        margin-top: 8vh;
+
+        margin-top: 5vh;
         h1 {
           font-size: 3.5rem;
           color: var(--secondary);
@@ -89,6 +92,12 @@ body {
         p {
           font-size: 0.85rem;
           text-align: left;
+        }
+        .year{
+          color: #ffe24b;
+        }
+        .movie-type{
+          font-size: 1.1rem;
         }
       }
 
@@ -105,16 +114,6 @@ body {
           gap: 2vw;
         }
       }
-    }
-
-    .gradient {
-      height: 100vh;
-      width: 20vw;
-      top: 0;
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.913);
-      opacity: 2;
-      filter: blur(200px);
     }
 
     .content {

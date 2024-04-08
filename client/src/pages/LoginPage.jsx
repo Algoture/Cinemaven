@@ -1,15 +1,11 @@
-import {
-  firebaseAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  useState,
-  useEffect,
-  NavLink,
-  toast,
-  Toaster,
-  useNavigate,
-} from "../Index";
-const Login = () => {
+import { firebaseAuth } from "../Index";
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { NavLink, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import "../css/Pages.scss";
+
+const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -20,29 +16,24 @@ const Login = () => {
   async function loginUser(event) {
     event.preventDefault();
     try {
-      let res = await signInWithEmailAndPassword(firebaseAuth, email, password);
+      await signInWithEmailAndPassword(firebaseAuth, email, password);
       navigate("/cinemaven");
+      toast.success("Welcome Back !");
     } catch (error) {
-      toast.error(error);
+      const errorMessage = error.message;
+      if (
+        errorMessage === "Firebase: Error (auth/invalid-login-credentials)."
+      ) {
+        toast.error("Invalid Email Or Password");
+      }
     }
     setEmail("");
     setPassword("");
   }
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
-      if (currentUser) {
-        navigate("/cinemaven");
-      }
-    });
-
-    return () => unsubscribe();
-  }, [navigate]);
-
   return (
     <>
       <div className="loginPage">
-        <NavLink to="/">Home</NavLink>
         <div className="loginCard">
           <p>Welcome Back !</p>
           <form
@@ -97,4 +88,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

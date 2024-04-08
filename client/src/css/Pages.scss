@@ -1,3 +1,8 @@
+:root {
+  --primary: #1d1d1d;
+  --secondary: #fff;
+  --accent: #ffe24b;
+}
 .password {
   width: 90%;
   height: 2.5rem;
@@ -12,6 +17,19 @@
     margin-right: 1rem;
     cursor: pointer;
   }
+}
+.landingPage{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p{
+    color: var(--secondary);
+    font-size: 2rem;
+  }
+  
 }
 .trial,
 .profile {
@@ -35,8 +53,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("loki.jpeg");
-  filter: blur(2px);
+  background-image: url("bg.jpg");
+  filter: blur(3px);
   z-index: -1;
 }
 
@@ -57,7 +75,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: rgba(53, 53, 53, 0.927);
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
 .passwordforgot {

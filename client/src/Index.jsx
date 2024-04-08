@@ -1,58 +1,32 @@
-import Login from "../src/pages/Login";
-import Nav from './components/Nav';
-import CarouselM from './components/Carousel/CarouselM';
-import LandingPage from './pages/LandingPage'
-import Register from "../src/pages/Register";
-import Cinemaven from "../src/pages/Cinemaven";
-import toast, { Toaster } from "react-hot-toast";
-import { firebaseAuth } from "./utils/firebase";
-import { useState ,useEffect} from "react";
-import {
-  NavLink,
-  useNavigate,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  updateProfile,
-  signInWithEmailAndPassword,
-  fetchSignInMethodsForEmail,
-  signOut,
-} from "firebase/auth";
+// Pages :
+import LoginPage from "./pages/LoginPage";
+import LandingPage from "./pages/LandingPage";
+import Register from "./pages/Register";
+import Cinemaven from "./pages/Cinemaven";
 import Favourite from "./pages/Favourite";
 import Profile from "./pages/Profile";
+import Page404 from "./pages/Page404";
 
+// Components :
+import Nav from "./components/Nav";
+import MainCarousel from "./components/Carousel/MainCarousel";
 
+// Utilities :
+import { firebaseAuth } from "./utils/firebase";
 
-
-
-
-
-// Exportation :
+// Export Pages  :
 export {
+  Page404,
   Profile,
-  Favourite,
-  LandingPage,
-  CarouselM,
-  Nav,
-  useEffect,
   Cinemaven,
-  createBrowserRouter,
-  RouterProvider,
-  Login,
+  Favourite,
+  LoginPage,
   Register,
-  useState,
-  NavLink,
-  toast,
-  Toaster,
-  useNavigate,
-  updateProfile,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  firebaseAuth,
-  fetchSignInMethodsForEmail,
-  signInWithEmailAndPassword,
-  signOut,
+  LandingPage,
 };
+
+// Export Components  :
+export { MainCarousel, Nav };
+
+// Export Utils  :
+export { firebaseAuth };
