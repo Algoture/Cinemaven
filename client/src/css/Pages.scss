@@ -1,8 +1,4 @@
-:root {
-  --primary: #1d1d1d;
-  --secondary: #fff;
-  --accent: #ffe24b;
-}
+
 .password {
   width: 90%;
   height: 2.5rem;
@@ -18,22 +14,13 @@
     cursor: pointer;
   }
 }
-.landingPage{
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  p{
-    color: var(--secondary);
-    font-size: 2rem;
-  }
-  
-}
+
 .trial,
 .profile {
   padding-left: 4vw;
+  h1{
+    color: black;
+  }
 }
 .loginPage,
 .registrationPage {
