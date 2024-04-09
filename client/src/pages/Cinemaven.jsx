@@ -36,11 +36,11 @@ const Cinemaven = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 2,
+      items: 1,
     },
   };
 
@@ -118,7 +118,7 @@ const Cinemaven = () => {
                   removeArrowOnDeviceType={["mobile", "desktop"]}
                 >
                   <div>
-                    <h1>Kung Fu Panda 4</h1>
+                    <h1 className="movie-name">Kung Fu Panda 4</h1>
                     <p>
                       Po, the beloved dragon warrior, faces a new challenge when
                       a powerful villain threatens the peace of the Valley of
@@ -131,7 +131,7 @@ const Cinemaven = () => {
                     </p>
                   </div>
                   <div>
-                    <h1 style={{ color: "#dc0073" }}>
+                    <h1 style={{ color: "#dc0073" }} className="movie-name">
                       Kingdom of the planet of the apes
                     </h1>
                     <p>
@@ -143,7 +143,7 @@ const Cinemaven = () => {
                     <p className="movie-type">Action | Sci-Fi</p>
                   </div>
                   <div>
-                    <h1>Terminator Genisys</h1>
+                    <h1 className="movie-name">Terminator Genisys</h1>
                     <p>
                       A cyborg assassin targets the mother of a future
                       resistance leader, triggering a race against time as a
@@ -153,7 +153,7 @@ const Cinemaven = () => {
                     <p className="movie-type">Action | Adventure | Sci-Fi</p>
                   </div>
                   <div>
-                    <h1>Dune</h1>
+                    <h1 className="movie-name">Dune</h1>
                     <p>
                       In a future of scarce resources, a young noble navigates
                       political intrigue and desert perils to safeguard his
