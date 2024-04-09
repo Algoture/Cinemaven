@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
@@ -7,15 +7,19 @@ import { API_url_Trending, options } from "../../utils/Constants";
 const CarouselM = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const fetchedData = useRef(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await fetch(API_url_Trending, options);
-        // const data = await res.json();
-        // console.log(data);
-        setMovies(data.trailers);
-        setLoading(false);
+        if (!fetchedData.current) {
+          // const res = await fetch(API_url_Trending, options);
+          // const data = await res.json();
+          // console.log(data);
+          setMovies(data.trailers);
+          setLoading(false);
+          fetchedData.current = true;
+        }
       } catch (error) {
         console.log(error);
       }
