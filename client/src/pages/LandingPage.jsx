@@ -1,9 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import "../css/LandingPage.scss";
 import "../css/Pages.scss";
+import { useState } from "react";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <div id="landingPage">
       <div className="outercontainer">
@@ -13,7 +23,7 @@ const LandingPage = () => {
             <p className="hinge__rivet hinge__rivet--bottomleft">⚪️</p>
             <p className="hinge__rivet hinge__rivet--bottomright">⚪️</p>
           </div>
-          <div className="clapper__top rotateDown">
+          <div className={isHovered ? "clapper__top rotate" : "clapper__top"}>
             <div className="clapper__top--white" />
             <div className="clapper__top--white" />
             <div className="clapper__top--white" />
@@ -33,6 +43,8 @@ const LandingPage = () => {
                 <h1>Cinemaven</h1>
                 <button
                   className="getStart"
+                  onMouseEnter={handleHover}
+                  onMouseLeave={handleLeave}
                   onClick={() => {
                     navigate("/login");
                   }}
