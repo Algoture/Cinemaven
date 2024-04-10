@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { firebaseAuth, MainCarousel, Nav } from "../Index";
 import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -15,21 +14,8 @@ const Cinemaven = () => {
     navigate("/");
     toast.success("Log Out Done !");
   };
-  const [scrollPosition, setScrollPosition] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+
   const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 1,
@@ -62,30 +48,10 @@ const Cinemaven = () => {
             transitionDuration={500}
             removeArrowOnDeviceType={["mobile", "desktop"]}
           >
-            <div
-              className="carousel-bgimg"
-              style={{ filter: `blur(${scrollPosition * 0.02}px)` }}
-            >
-              <img src="kung fu panda 4.jpg" alt="" />
-            </div>
-            <div
-              className="carousel-bgimg"
-              style={{ filter: `blur(${scrollPosition * 0.02}px)` }}
-            >
-              <img src="kingdom-of-the-planet-of-the-apes.jpg" alt="" />
-            </div>
-            <div
-              className="carousel-bgimg"
-              style={{ filter: `blur(${scrollPosition * 0.02}px)` }}
-            >
-              <img src="terminator.jpg" alt="" />
-            </div>
-            <div
-              className="carousel-bgimg"
-              style={{ filter: `blur(${scrollPosition * 0.02}px)` }}
-            >
-              <img src="dune.jpg" alt="" />
-            </div>
+            <img src="kung fu panda 4.jpg" alt="" className="carousel-bgimg" />
+            <img src="apesplanet.jpg" alt="" className="carousel-bgimg" />
+            <img src="terminator.jpg" alt="" className="carousel-bgimg" />
+            <img src="dune.jpg" alt="" className="carousel-bgimg" />
           </Carousel>
         </div>
         <div className="main">
@@ -106,9 +72,8 @@ const Cinemaven = () => {
               <div className="movie">
                 <Carousel
                   responsive={responsive}
-                  showDots={false}
+                  keyBoardControl={true}
                   autoPlay={true}
-                  partialVisible={false}
                   containerClass="movie"
                   pauseOnHover={false}
                   autoPlaySpeed={7000}
@@ -126,9 +91,7 @@ const Cinemaven = () => {
                       and kung fu mastery.
                     </p>
                     <p className="year">2024</p>
-                    <p className="movie-type">
-                      Animation | Action | Adventure{" "}
-                    </p>
+                    <p className="movie-type">Animation | Action | Adventure</p>
                   </div>
                   <div>
                     <h1 style={{ color: "#dc0073" }} className="movie-name">
@@ -176,7 +139,9 @@ const Cinemaven = () => {
           </div>
         </div>
       </div>
-      <MainCarousel />
+      <MainCarousel start={0} end={10} heading={"Popular Now"} />
+      <MainCarousel start={10} end={20} heading={"Latest Releases"} />
+      <MainCarousel start={20} end={30} heading={"Trending"} />
       <Toaster />
     </>
   );
