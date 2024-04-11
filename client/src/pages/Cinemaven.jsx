@@ -12,7 +12,6 @@ const Cinemaven = React.memo(() => {
   const handleClick = () => {
     signOut(firebaseAuth);
     navigate("/");
-    toast.success("Log Out Done !");
   };
 
   const responsive = {

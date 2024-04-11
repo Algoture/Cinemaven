@@ -10,6 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -17,6 +18,7 @@ const Register = () => {
   async function registration(event) {
     event.preventDefault();
     try {
+      setLoading(true);
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
       await updateProfile(firebaseAuth.currentUser, { displayName: name });
       toast.success("Account Created  Successfully!");
@@ -26,6 +28,8 @@ const Register = () => {
       if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
         toast.error("Email already in use");
       }
+    } finally {
+      setLoading(false);
     }
     setEmail("");
     setName("");
@@ -75,13 +79,21 @@ const Register = () => {
                 id="password"
                 autoComplete="current-password"
               />
-              {/* <img
+              <img
                 src={showPassword ? "closed-eye.png" : "open-eye.png"}
                 alt=""
                 onClick={toggleShowPassword}
-              /> */}
+              />
             </div>
-            <button type="submit">Sign Up</button>
+            <button type="submit" disabled={loading}>
+              {loading ? (
+                <div className="authloading">
+                  <div className="authloader"></div>
+                </div>
+              ) : (
+                "Register"
+              )}
+            </button>
           </form>
           <span>
             Already Registered? <NavLink to="/login">Login</NavLink>

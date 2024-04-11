@@ -76,7 +76,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={user ? <Cinemaven /> : <LandingPage/>} />
+        <Route path="/" element={user ? <Cinemaven /> : <LandingPage />} />
         <Route path="/login" element={user ? <Cinemaven /> : <LoginPage />} />
         <Route path="/register" element={user ? <Cinemaven /> : <Register />} />
         <Route
@@ -96,11 +96,12 @@ function App() {
 
 function LoginPrompt() {
   return (
-    <div>
-      <p style={{ color: "black" }}>Please login to access</p>
-      <NavLink to="/login" style={{ color: "black", marginLeft: "4vw" }}>
-        Login
-      </NavLink>
+    <div className="access">
+      <img src="lock.png" alt="" />
+      <p>Please login to access Cinemaven</p>
+      <button id="access-button">
+        <NavLink to="/login">Login</NavLink>
+      </button>
     </div>
   );
 }

@@ -9,6 +9,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -16,9 +17,9 @@ const LoginPage = () => {
   async function loginUser(event) {
     event.preventDefault();
     try {
+      setLoading(true);
       await signInWithEmailAndPassword(firebaseAuth, email, password);
       navigate("/cinemaven");
-      toast.success("Welcome Back !");
     } catch (error) {
       const errorMessage = error.message;
       if (
@@ -26,6 +27,8 @@ const LoginPage = () => {
       ) {
         toast.error("Invalid Email Or Password");
       }
+    } finally {
+      setLoading(false);
     }
     setEmail("");
     setPassword("");
@@ -70,13 +73,21 @@ const LoginPage = () => {
                 id="password"
                 autoComplete="current-password"
               />
-              {/* <img
+              <img
                   src={showPassword ? "closed-eye.png" : "open-eye.png"}
                   alt=""
                   onClick={toggleShowPassword}
-                /> */}
+                />
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" disabled={loading}>
+              {loading ? (
+                <div className="authloading">
+                  <div className="authloader"></div>
+                </div>
+              ) : (
+                "Login"
+              )}
+            </button>
           </form>
           <span>
             Don't have an account? <NavLink to="/register">Register</NavLink>

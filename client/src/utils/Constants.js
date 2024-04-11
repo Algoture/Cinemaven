@@ -7,4 +7,5 @@ const options = {
     "X-RapidAPI-Host": "moviesverse1.p.rapidapi.com",
   },
 };
-export {API_url_Trending,options};
+const location_API_URL = "https://ipinfo.io/json";
+export { API_url_Trending, options, location_API_URL };
