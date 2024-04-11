@@ -6,8 +6,8 @@ import Carousel from "react-multi-carousel";
 import "../css/Cinemaven.scss";
 import "react-multi-carousel/lib/styles.css";
 import "../css/Pages.scss";
-
-const Cinemaven = () => {
+import React from "react";
+const Cinemaven = React.memo(() => {
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(firebaseAuth);
@@ -48,10 +48,30 @@ const Cinemaven = () => {
             transitionDuration={500}
             removeArrowOnDeviceType={["mobile", "desktop"]}
           >
-            <img src="kung fu panda 4.jpg" alt="" className="carousel-bgimg" />
-            <img src="apesplanet.jpg" alt="" className="carousel-bgimg" />
-            <img src="terminator.jpg" alt="" className="carousel-bgimg" />
-            <img src="dune.jpg" alt="" className="carousel-bgimg" />
+            <img
+              src="kung fu panda 4.jpg"
+              alt=""
+              className="carousel-bgimg"
+              loading="lazy"
+            />
+            <img
+              src="apesplanet.jpg"
+              alt=""
+              className="carousel-bgimg"
+              loading="lazy"
+            />
+            <img
+              src="terminator.jpg"
+              alt=""
+              className="carousel-bgimg"
+              loading="lazy"
+            />
+            <img
+              src="dune.jpg"
+              alt=""
+              className="carousel-bgimg"
+              loading="lazy"
+            />
           </Carousel>
         </div>
         <div className="main">
@@ -145,6 +165,6 @@ const Cinemaven = () => {
       <Toaster />
     </>
   );
-};
+});
 
 export default Cinemaven;
