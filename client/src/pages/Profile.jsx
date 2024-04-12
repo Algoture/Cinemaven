@@ -1,51 +1,40 @@
 import { Nav, firebaseAuth } from "../Index";
-import { location_API_URL } from "../utils/Constants";
 import { useNavigate } from "react-router-dom";
-import "../css/Pages.scss";
-
-import { useEffect, useState } from "react";
+import "../css/ProfilePage.css";
 import { signOut } from "firebase/auth";
 
 const Profile = () => {
-  const [location, setLocation] = useState("");
-  const apidata = async () => {
-    try {
-      const res = await fetch(location_API_URL);
-      const data = await res.json();
-      setLocation(data);
-    } catch (error) {
-      const errormsg = error;
-      console.log(errormsg);
-    }
-  };
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(firebaseAuth);
     navigate("/");
   };
-
-  useEffect(() => {
-    apidata();
-  }, []);
-
   return (
     <div className="profilePage">
       <Nav />
       <div className="Profilecontainer">
-        <header>
-          <h1>Profile</h1>
-        </header>
-        <div className="profile-info">
-          <img src="user.png" alt="User Avatar" />
-          <h2 id="username">{firebaseAuth.currentUser.displayName}</h2>
-          <p>Email : {firebaseAuth.currentUser.email}</p>
-          <p>
-            Location: {location.city}, {location.region}, {location.country}
-          </p>
+        <div className="profile-card">
+          <div className="profile-header">
+            <div className="main-profile">
+              <img
+                className="profile-image"
+                src="avatar.png"
+                alt="Profile Image"
+              />
+              <div className="profile-names">
+                <h1 className="username">
+                  {firebaseAuth.currentUser.displayName}
+                </h1>
+                <small className="email">
+                  {firebaseAuth.currentUser.email}
+                </small>
+                {/* <p id="location">{location.city},{location.region}</p>
+                 */}
+                 <button onClick={handleClick}>Logout</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <button id="logout" onClick={handleClick}>
-          Logout
-        </button>
       </div>
     </div>
   );
