@@ -19,7 +19,9 @@ import {
   Cinemaven,
   LandingPage,
   Page404,
-  Nav,
+  AllPage,
+  TvShowsPage,
+  MorePage,
   firebaseAuth,
 } from "./Index";
 
@@ -83,6 +85,12 @@ function App() {
           path="/favourite"
           element={user ? <Favourite /> : <LoginPrompt />}
         />
+        <Route path="/all" element={user ? <AllPage /> : <LoginPrompt />} />
+        <Route
+          path="/tvshows"
+          element={user ? <TvShowsPage /> : <LoginPrompt />}
+        />
+        <Route path="/more" element={user ? <MorePage /> : <LoginPrompt />} />
         <Route
           path="/cinemaven"
           element={user ? <Cinemaven /> : <LoginPrompt />}

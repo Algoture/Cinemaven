@@ -6,6 +6,9 @@ import Cinemaven from "./pages/Cinemaven";
 import Favourite from "./pages/Favourite";
 import Profile from "./pages/Profile";
 import Page404 from "./pages/Page404";
+import AllPage from "./pages/AllPage";
+import TvShowsPage from "./pages/TvShowsPage";
+import MorePage from "./pages/MorePage";
 
 // Components :
 import Nav from "./components/Nav";
@@ -16,7 +19,10 @@ import { firebaseAuth } from "./utils/firebase";
 
 // Export Pages  :
 export {
+  MorePage,
+  TvShowsPage,
   Page404,
+  AllPage,
   Profile,
   Cinemaven,
   Favourite,
