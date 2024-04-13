@@ -30,7 +30,7 @@ const Profile = () => {
                 </small>
                 {/* <p id="location">{location.city},{location.region}</p>
                  */}
-                 <button onClick={handleClick}>Logout</button>
+                 <button onClick={handleClick} className="logoutbutton">Logout</button>
               </div>
             </div>
           </div>

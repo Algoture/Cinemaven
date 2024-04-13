@@ -33,6 +33,9 @@ const Cinemaven = React.memo(() => {
     <>
       <Nav />
       <div className="cinemaven">
+        <button onClick={handleClick} className="homelogoutbutton">
+          LogOut
+        </button>
         <div className="bg-img">
           <Carousel
             responsive={responsive}
@@ -149,9 +152,8 @@ const Cinemaven = React.memo(() => {
 
               <div className="watch">
                 <div className="trailer-button">
-                  <button className="trailer">Trailer</button>
+                  <button className="trailer" >Trailer</button>
                   <button className="add-list">Add List</button>
-                  <button onClick={handleClick}>LogOut</button>
                 </div>
               </div>
             </div>

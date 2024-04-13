@@ -9,6 +9,7 @@ import Page404 from "./pages/Page404";
 import AllPage from "./pages/AllPage";
 import TvShowsPage from "./pages/TvShowsPage";
 import MorePage from "./pages/MorePage";
+import SearchPage from "./pages/SearchPage";
 
 // Components :
 import Nav from "./components/Nav";
@@ -19,6 +20,7 @@ import { firebaseAuth } from "./utils/firebase";
 
 // Export Pages  :
 export {
+  SearchPage,
   MorePage,
   TvShowsPage,
   Page404,

@@ -17,6 +17,16 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
+  .homelogoutbutton {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
+  }
+  .homelogoutbutton:hover {
+    background-color: #fff;
+    color: #1d1d1d;
+  }
   .bg-img {
     .carousel-bgimg {
       height: 100vh;
@@ -70,11 +80,24 @@ body {
         display: flex;
         align-items: center;
         gap: 1vw;
+        .navlinks::after {
+          content: "";
+          width: 100%;
+          transform: scale(0,1);
+          position: absolute;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #ffe24b;
+          left: 0;
+          bottom: 0;
+          transition: transform 0.3s ease;
+        }
         .navlinks {
+          position: relative;
           color: white;
         }
-        .navlinks:hover {
-          color: var(--accent);
+        .navlinks:hover::after {
+          transform: scale(1,1);
         }
       }
       .movie {

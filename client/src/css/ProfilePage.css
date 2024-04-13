@@ -73,7 +73,10 @@ html {
 .email {
   color: var(--secondary-color);
 }
-
+.logoutbutton:hover{
+  background-color: #fff;
+  color: #1d1d1d;
+}
 /* ------------ media queries */
 @media screen and (max-width: 950px) {
   .last-post {

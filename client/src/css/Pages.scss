@@ -79,4 +79,19 @@
   gap: 1rem;
 }
 
-
+.searchPage {
+  margin-left: 4vw;
+  input[type="text"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    width: 300px;
+  }
+  .movie-poster {
+    width: 150px;
+    height: auto;
+  }
+  li{
+    cursor: pointer;
+  }
+}
