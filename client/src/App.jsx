@@ -24,7 +24,7 @@ import {
   SearchPage,
   firebaseAuth,
 } from "./Index";
-
+import Movies from "./pages/Movies"
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -79,6 +79,7 @@ function App() {
           path="/search"
           element={user ? <SearchPage /> : <LoginPrompt />}
         />
+        <Route path="/movies" element={<Movies/>}/>
         <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>

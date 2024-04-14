@@ -6,7 +6,7 @@ import Carousel from "react-multi-carousel";
 import "../css/Cinemaven.scss";
 import "react-multi-carousel/lib/styles.css";
 import "../css/Pages.scss";
-import React from "react";
+import React,{ useState } from "react";
 const Cinemaven = React.memo(() => {
   const navigate = useNavigate();
   const handleClick = () => {
@@ -14,6 +14,11 @@ const Cinemaven = React.memo(() => {
     navigate("/");
   };
 
+  const [moviesComponent, setMoviesComponent] = useState(null);
+
+  const handleButtonClick =  () => {
+    navigate("/Movies");
+  };
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -152,7 +157,7 @@ const Cinemaven = React.memo(() => {
 
               <div className="watch">
                 <div className="trailer-button">
-                  <button className="trailer" >Trailer</button>
+                <button className="trailer" onClick={handleButtonClick}>Trailer</button> 
                   <button className="add-list">Add List</button>
                 </div>
               </div>
