@@ -5,11 +5,11 @@
 
 .MoviesPage {
   margin-left: 4vw;
-
-
+  overflow-x: hidden;
 }
 
 .components {
+  margin-top: 10vh;
   margin-left: 4vw;
   height: 100vh;
   width: 100vw;
@@ -81,14 +81,13 @@
 }
 
 .movie-card {
-  margin-top: -10vh;
-  width: 30vw;
-  height: 50vh;
+  /* margin-top: 10vh; */
+  width: 28vw;
+  height: 40vh;
   border-radius: 35px;
   position: relative;
   box-shadow: 0 0 30px rgba(17, 17, 17, 0.5);
-  ;
-  margin-left: 88vh
+  margin-left: 88vh;
 }
 
 .card-trailer {
@@ -98,7 +97,7 @@
 
 .card-movie {
   position: fixed;
-  margin-top: 60vh;
+  margin-top: 50vh;
 }
 
 .movie-card .content-card,

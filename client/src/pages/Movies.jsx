@@ -3,19 +3,19 @@ import "../css/Movies.css";
 import { Nav } from "../Index";
 
 function MovieDetails() {
-  return(
-<div className="movieDetails">
-    <h1>SHAITAN </h1>
-    <h3>2024</h3>
-    <p>A timeless tale of battle between good and evil with a family embodying the forces of righteousness while a man symbolizes malevolence.
-      <br /> <br />Horror / Thriller
-    </p>
-    
-    
-  </div>
+  return (
+    <div className="movieDetails">
+      <h1>SHAITAN </h1>
+      <h3>2024</h3>
+      <p>A timeless tale of battle between good and evil with a family embodying the forces of righteousness while a man symbolizes malevolence.
+        <br /> <br />Horror / Thriller
+      </p>
+
+
+    </div>
   )
-  
-  
+
+
 }
 
 function Movies() {
@@ -27,13 +27,13 @@ function Movies() {
 
   return (
     <>
-    
+
       <Nav />
       <MovieDetails />
       <div className="MoviesPage">
         <div className="gradient"></div>
 
-      
+
         <div className="components">
           <div className="movie-card card-trailer" onClick={handleCardClick}>
             <div className="content-card">
