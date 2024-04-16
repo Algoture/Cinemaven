@@ -13,9 +13,8 @@ const MainCarousel = ({ heading, start, end }) => {
     const fetchData = async () => {
       try {
         if (!fetchedData.current) {
-          // const res = await fetch(API_url_Trending, options);
-          // const data = await res.json();
-          // console.log(data);
+          const res = await fetch(API_url_Trending, options);
+          const data = await res.json();
           setMovies(data.trailers);
           setLoading(false);
           fetchedData.current = true;
