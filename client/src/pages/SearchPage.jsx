@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { API_url_Trending, options } from "../utils/Constants";
 import { Nav } from "../Index";
 const SearchPage = () => {
   const [movies, setMovies] = useState([]);
@@ -6,14 +7,23 @@ const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+  const fetchedData = useRef(false);
 
   useEffect(() => {
-    const storedData = localStorage.getItem("trendingMovies");
-    if (storedData) {
-      setMovies(JSON.parse(storedData));
-      setLoading(false);
-    } else {
-    }
+    const fetchData = async () => {
+      try {
+        if (!fetchedData.current) {
+          const res = await fetch(API_url_Trending, options);
+          const data = await res.json();
+          setMovies(data.trailers);
+          setLoading(false);
+          fetchedData.current = true;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
 
   const handleInputChange = (e) => {
