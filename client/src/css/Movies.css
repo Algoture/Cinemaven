@@ -1,38 +1,37 @@
-
-*{
-  transition:all .5s;
+* {
+  transition: all .5s;
 }
 
 
 .MoviesPage {
   margin-left: 4vw;
-  
-  
+
+
 }
-.components{
+
+.components {
   margin-left: 4vw;
   height: 100vh;
   width: 100vw;
 }
-.MoviesPage img{
+
+.MoviesPage img {
   height: 100vh;
   width: 100vw;
 }
+
 .gradient {
   height: 100vh;
   width: 100vw;
   top: 0;
   position: absolute;
-  background: rgb(45,45,45);
-  background: linear-gradient(90deg, rgba(45,45,45,1) 0%, rgba(45,45,45,0.7441570378151261) 50%, rgba(255,255,255,0) 100%), url(https://i.ytimg.com/vi/_qezc9IcCMA/maxresdefault.jpg);
+  background: rgb(45, 45, 45);
+  background: linear-gradient(90deg, rgba(45, 45, 45, 1) 0%, rgba(45, 45, 45, 0.7441570378151261) 50%, rgba(255, 255, 255, 0) 100%), url(https://i.ytimg.com/vi/_qezc9IcCMA/maxresdefault.jpg);
   z-index: -1;
-position: fixed;
-/* Adjust background properties */
-background-size: cover;
-background-position: center;
-/* Specify other styles */
-padding: 10px;
-/* Add more styles as needed */
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
 }
 
 .trailer-overlay {
@@ -41,35 +40,39 @@ padding: 10px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999; /* Ensure it's above other elements */
+  z-index: 999;
 }
-.iFrame{
- 
+
+.iFrame {
+
   z-index: 999;
   width: 90%;
   height: 80%;
 }
-.movieDetails{
+
+.movieDetails {
   margin-left: 4vw;
   width: 30vw;
 }
-.movieDetails h1{
+
+.movieDetails h1 {
   text-transform: uppercase;
   padding-top: 30vh;
   padding-left: 10vh;
   font-size: 4.4rem;
 }
 
-.movieDetails h3{
+.movieDetails h3 {
   padding-left: 5vw;
   padding-top: 5vh;
   color: grey;
 }
-.movieDetails p{
+
+.movieDetails p {
   padding-left: 5vw;
   font-size: 0.8rem;
   color: grey;
@@ -77,110 +80,110 @@ padding: 10px;
   margin-bottom: -70vh;
 }
 
-.movie-card{
- margin-top: -10vh;
-  width:500px;
-  height:335px;
-  border-radius:35px;
-  position:relative;
-  box-shadow:0 0 30px rgba(17, 17, 17, 0.5); ;
+.movie-card {
+  margin-top: -10vh;
+  width: 30vw;
+  height: 50vh;
+  border-radius: 35px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(17, 17, 17, 0.5);
+  ;
   margin-left: 88vh
 }
 
-.card-trailer{
+.card-trailer {
   position: fixed;
   margin-top: 0vh;
 }
-.card-movie{
+
+.card-movie {
   position: fixed;
   margin-top: 60vh;
 }
+
 .movie-card .content-card,
-.movie-card .watch-card{
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  left:0;
-  border-radius:35px;
-  overflow:hidden;
-  cursor:pointer;
-}
-
-
-.movie-card .watch-card{
+.movie-card .watch-card {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  background:#FFC300;
-  z-index:-1;
-}
-.movie-card .watch-card button{
-  position:absolute;
-  left:50%;
-  bottom:15px;
-  transform:translate(-50%,0%);
-  border:none;
-  outline:none;
-  background:none;
-  color:#222;
-  text-transform:uppercase;
-  font-weight:700;
-  font-size:1em;
-  cursor:pointer;
-}
-.movie-card-second .watch-card button:hover{
-  color:#ff0000;
+  top: 0;
+  left: 0;
+  border-radius: 35px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 
-.movie-card .content-card{
-  padding:20px 25px;
-}
-.movie-card .content-card:hover{
-  top:-50px;
-}
-.movie-card .content-card:hover img{
-  transform:scale(1.2);
-}
-.movie-card .content-card img{
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  left:0;
-  object-fit:cover;
+.movie-card .watch-card {
+  position: absolute;
+  background: #FFC300;
+  z-index: -1;
 }
 
+.movie-card .watch-card button {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translate(-50%, 0%);
+  border: none;
+  outline: none;
+  background: none;
+  color: #222;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+}
 
-.movie-card .content-card .shadow{
-  width:100%;
-  height:170px;
-  display:block;
-  position:absolute;
-  bottom:0;
-  left:0;
- background:#1111117d;
-  box-shadow:0 0 10px 20px #11111198;
-  filter:blur(10px);
+.movie-card-second .watch-card button:hover {
+  color: #ff0000;
 }
 
 
-.movie-card .content-card .content{
-  position:absolute;
-  color:#eee;
-  bottom:20px;
+.movie-card .content-card {
+  padding: 20px 25px;
+}
+
+.movie-card .content-card:hover {
+  top: -50px;
+}
+
+.movie-card .content-card:hover img {
+  transform: scale(1.2);
+}
+
+.movie-card .content-card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 
-.movie-card .content-card .content h1{
-  text-transform:capitalize;
-  font-weight:700;
-  font-size:0.7em;
+.movie-card .content-card .shadow {
+  width: 100%;
+  height: 170px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #1111117d;
+  box-shadow: 0 0 10px 20px #11111198;
+  filter: blur(10px);
 }
 
 
+.movie-card .content-card .content {
+  position: absolute;
+  color: #eee;
+  bottom: 20px;
+}
 
 
-
-
-
-
+.movie-card .content-card .content h1 {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 0.7em;
+}
