@@ -8,7 +8,6 @@ const MainCarousel = ({ heading, start, end }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const fetchedData = useRef(false);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,6 +16,10 @@ const MainCarousel = ({ heading, start, end }) => {
           const data = await res.json();
           setMovies(data.trailers);
           setLoading(false);
+          const url = data.trailers[0].videoLink;
+          const titleIndex = url.indexOf("/title/") + 7; 
+          const title = url.substring(titleIndex, url.indexOf("/", titleIndex)); 
+          console.log(title);
           fetchedData.current = true;
         }
       } catch (error) {
@@ -25,7 +28,6 @@ const MainCarousel = ({ heading, start, end }) => {
     };
     fetchData();
   }, []);
-
 
   const responsive = {
     desktop: {
