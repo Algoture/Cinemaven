@@ -87,10 +87,9 @@ function TrailerPage() {
               onClick={() => setShowMovie(false)}
             >
               <iframe
+                className="iFrame2"
+                title="YouTube video player"
                 src="https://www.2embed.cc/embed/tt21692408"
-                width="100%"
-                height="100%"
-                frameborder="0"
                 allowfullscreen
               ></iframe>
             </div>
