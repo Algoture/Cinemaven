@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/ProfilePage.css";
 import { signOut } from "firebase/auth";
 
-const Profile = () => {
+const ProfilePage = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(firebaseAuth);
@@ -28,9 +28,9 @@ const Profile = () => {
                 <small className="email">
                   {firebaseAuth.currentUser.email}
                 </small>
-                {/* <p id="location">{location.city},{location.region}</p>
-                 */}
-                 <button onClick={handleClick} className="logoutbutton">Logout</button>
+                <button onClick={handleClick} className="logoutbutton">
+                  Logout
+                </button>
               </div>
             </div>
           </div>
@@ -40,4 +40,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;

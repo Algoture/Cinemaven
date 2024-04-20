@@ -11,9 +11,10 @@ import "./css/App.scss";
 import "./css/Components.scss";
 import "./css/MediaQueries.scss";
 import {
+  TrailerPage,
   LoginPage,
   Register,
-  Profile,
+  ProfilePage,
   Favourite,
   Cinemaven,
   LandingPage,
@@ -24,7 +25,6 @@ import {
   SearchPage,
   firebaseAuth,
 } from "./Index";
-import Movies from "./pages/Movies"
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -74,12 +74,18 @@ function App() {
           path="/cinemaven"
           element={user ? <Cinemaven /> : <LoginPrompt />}
         />
-        <Route path="/profile" element={user ? <Profile /> : <LoginPrompt />} />
+        <Route
+          path="/profile"
+          element={user ? <ProfilePage /> : <LoginPrompt />}
+        />
         <Route
           path="/search"
           element={user ? <SearchPage /> : <LoginPrompt />}
         />
-        <Route path="/movies" element={<Movies/>}/>
+        <Route
+          path="/movies"
+          element={user ? <TrailerPage /> : <LoginPrompt />}
+        />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>

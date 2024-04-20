@@ -1,37 +1,44 @@
+:root {
+  --primary: #1d1d1d;
+  --secondary: #fff;
+  --accent: #ffe24b;
+}
 * {
-  transition: all .5s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  transition: all 0.4s;
 }
-
-
+body {
+  width: 100%;
+  height: 100%;
+}
 .MoviesPage {
+  width: 100%;
+  height: 100%;
   margin-left: 4vw;
-  overflow-x: hidden;
 }
-
-.components {
-  margin-top: 10vh;
-  margin-left: 4vw;
-  height: 100vh;
-  width: 100vw;
+.components{
+  width: 100%;
+  height: 100%;
 }
-
-.MoviesPage img {
-  height: 100vh;
-  width: 100vw;
-}
-
 .gradient {
   height: 100vh;
   width: 100vw;
-  top: 0;
-  position: absolute;
-  background: rgb(45, 45, 45);
-  background: linear-gradient(90deg, rgba(45, 45, 45, 1) 0%, rgba(45, 45, 45, 0.7441570378151261) 50%, rgba(255, 255, 255, 0) 100%), url(https://i.ytimg.com/vi/_qezc9IcCMA/maxresdefault.jpg);
-  z-index: -1;
   position: fixed;
+  top: 0;
+  left: 4vw;
+  background: linear-gradient(
+      90deg,
+      rgba(45, 45, 45, 1) 0%,
+      rgba(45, 45, 45, 0.7441570378151261) 50%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--poster-url);
+  z-index: -1;
   background-size: cover;
   background-position: center;
-  padding: 10px;
 }
 
 .trailer-overlay {
@@ -48,22 +55,26 @@
 }
 
 .iFrame {
-
-  z-index: 999;
-  width: 90%;
-  height: 80%;
+  z-index: 99;
+  width: 90vw;
+  border-radius: 25px;
+  height: 80vh;
 }
 
 .movieDetails {
   margin-left: 4vw;
-  width: 30vw;
+  /* border:2px solid red; */
+  width: 50vw;
+  height: 100vh;
 }
 
 .movieDetails h1 {
   text-transform: uppercase;
-  padding-top: 30vh;
+  padding-top: 20vh;
   padding-left: 10vh;
-  font-size: 4.4rem;
+  font-size: 3.8rem;
+  line-height: 3.5rem;
+  word-spacing: .4rem;
 }
 
 .movieDetails h3 {
@@ -77,11 +88,12 @@
   font-size: 0.8rem;
   color: grey;
   text-align: left;
-  margin-bottom: -70vh;
 }
 
 .movie-card {
-  /* margin-top: 10vh; */
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
   width: 28vw;
   height: 40vh;
   border-radius: 35px;
@@ -112,10 +124,9 @@
   cursor: pointer;
 }
 
-
 .movie-card .watch-card {
   position: absolute;
-  background: #FFC300;
+  background: var(--accent);
   z-index: -1;
 }
 
@@ -138,7 +149,6 @@
   color: #ff0000;
 }
 
-
 .movie-card .content-card {
   padding: 20px 25px;
 }
@@ -160,7 +170,6 @@
   object-fit: cover;
 }
 
-
 .movie-card .content-card .shadow {
   width: 100%;
   height: 170px;
@@ -170,19 +179,15 @@
   left: 0;
   background: #1111117d;
   box-shadow: 0 0 10px 20px #11111198;
-  filter: blur(10px);
+  filter: blur(20px);
 }
-
 
 .movie-card .content-card .content {
   position: absolute;
   color: #eee;
   bottom: 20px;
 }
-
-
-.movie-card .content-card .content h1 {
-  text-transform: capitalize;
+ .content-card .content h1 {
   font-weight: 700;
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
