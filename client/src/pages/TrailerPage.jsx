@@ -15,13 +15,16 @@ function MovieDetails({ title, year, description }) {
 
 function TrailerPage() {
   const [showTrailer, setShowTrailer] = useState(false);
+  const [showMovie, setShowMovie] = useState(false);
   const location = useLocation();
   const { movie } = location.state || {};
 
   const handleCardClick = () => {
     setShowTrailer(true);
   };
-
+  const handleMovieCardClick = () => {
+    setShowMovie(true);
+  };
   return (
     <>
       <Nav />
@@ -50,7 +53,7 @@ function TrailerPage() {
             </div>
           </div>
 
-          <div className="movie-card card-movie">
+          <div className="movie-card card-movie" onClick={handleMovieCardClick}>
             <div className="content-card">
               <img src={movie.image} alt={movie.title} />
               <span className="shadow"></span>
@@ -75,6 +78,20 @@ function TrailerPage() {
                 title="YouTube video player"
                 allowFullScreen
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+              ></iframe>
+            </div>
+          )}
+          {showMovie && (
+            <div
+              className="trailer-overlay"
+              onClick={() => setShowMovie(false)}
+            >
+              <iframe
+                src="https://www.2embed.cc/embed/tt21692408"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                allowfullscreen
               ></iframe>
             </div>
           )}
