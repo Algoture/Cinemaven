@@ -3,7 +3,30 @@
   --secondary: #fff;
   --accent: #ffe24b;
 }
-
+.teaserpage {
+  padding-left: 4vw;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--secondary);
+  display: flex;
+  .teaserdetails {
+    width: 70%;
+    height: 100%;
+  }
+  .teaserCards {
+    width: 30%;
+    height: 100%;
+  }
+  .teaserh1 {
+    color: #1d1d1d;
+  }
+  .teaserimage {
+    border-radius: 25px;
+    width: 200px;
+    height: 300px;
+    
+  }
+}
 .password {
   width: 90%;
   height: 2.5rem;
@@ -91,7 +114,7 @@
     width: 150px;
     height: auto;
   }
-  li{
+  li {
     cursor: pointer;
   }
 }

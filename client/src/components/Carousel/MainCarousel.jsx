@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
+import moviesData from "../../utils/Data.js";
 import { API_url_Trending, options } from "../../utils/Constants";
 
 const MainCarousel = ({ heading, start, end }) => {
@@ -12,14 +13,15 @@ const MainCarousel = ({ heading, start, end }) => {
     const fetchData = async () => {
       try {
         if (!fetchedData.current) {
-          const res = await fetch(API_url_Trending, options);
-          const data = await res.json();
-          setMovies(data.trailers);
+          // const res = await fetch(API_url_Trending, options);
+          // const data = await res.json();
+          // console.log(data);
+          setMovies(moviesData);
           setLoading(false);
-          const url = data.trailers[0].videoLink;
-          const titleIndex = url.indexOf("/title/") + 7; 
-          const title = url.substring(titleIndex, url.indexOf("/", titleIndex)); 
-          console.log(title);
+          // const url = data.trailers[0].videoLink;
+          // const titleIndex = url.indexOf("/title/") + 7;
+          // const title = url.substring(titleIndex, url.indexOf("/", titleIndex));
+          // console.log(title);
           fetchedData.current = true;
         }
       } catch (error) {
@@ -63,7 +65,7 @@ const MainCarousel = ({ heading, start, end }) => {
             customTransition="all 2s"
             transitionDuration={700}
             removeArrowOnDeviceType={["mobile"]}
-            swipeable={true}
+            swipeable={false}
           >
             {movies.length > 0 &&
               movies.slice(start, end).map((curElem) => {

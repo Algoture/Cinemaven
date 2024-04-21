@@ -25,6 +25,7 @@ import {
   SearchPage,
   firebaseAuth,
 } from "./Index";
+import TeaserPage from "./pages/TeaserPage";
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -85,6 +86,10 @@ function App() {
         <Route
           path="/movies"
           element={user ? <TrailerPage /> : <LoginPrompt />}
+        />
+        <Route
+          path="/teaser"
+          element={user ? <TeaserPage /> : <LoginPrompt />}
         />
         <Route path="*" element={<Page404 />} />
       </Routes>

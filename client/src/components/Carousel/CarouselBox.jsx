@@ -1,18 +1,25 @@
+import { useNavigate } from "react-router-dom";
+
 const CarouselBox = ({ actualData }) => {
-  const { image, title, videoLink } = actualData;
+  const { image, title, videoLink, trailerLength, releaseDate } = actualData;
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/teaser", {
+      state: { title, videoLink, image, trailerLength, releaseDate },
+    });
+  };
   if (!image) {
     return null;
   }
-
   return (
     <div className="carousel">
       <div className="wrapper">
         <div className="banner-image">
           <img src={image} alt={title} />
           <div className="carousel-img-container">
-            <a href={videoLink} target="_blank">
-              <button className="trailer">Trailer</button>
-            </a>
+            <button className="trailer" onClick={handleButtonClick}>
+              Trailer
+            </button>
             <button className="wish-list">+</button>
           </div>
         </div>

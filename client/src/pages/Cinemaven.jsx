@@ -2,7 +2,6 @@ import React from "react";
 import { firebaseAuth, MainCarousel, Nav } from "../Index";
 import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
 import Carousel from "react-multi-carousel";
 import "../css/Cinemaven.scss";
 import "react-multi-carousel/lib/styles.css";
@@ -155,7 +154,6 @@ const Cinemaven = React.memo(() => {
       <MainCarousel start={0} end={10} heading={"Popular Now"} />
       <MainCarousel start={10} end={20} heading={"Latest Releases"} />
       <MainCarousel start={20} end={30} heading={"Trending"} />
-      <Toaster />
     </>
   );
 });
