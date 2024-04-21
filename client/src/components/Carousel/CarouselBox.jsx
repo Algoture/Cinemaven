@@ -18,7 +18,7 @@ const CarouselBox = ({ actualData }) => {
           <img src={image} alt={title} />
           <div className="carousel-img-container">
             <button className="trailer" onClick={handleButtonClick}>
-              Trailer
+              Watch
             </button>
             <button className="wish-list">+</button>
           </div>

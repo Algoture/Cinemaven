@@ -133,15 +133,15 @@ const Cinemaven = React.memo(() => {
                   removeArrowOnDeviceType={["mobile", "desktop"]}
                 >
                   {movies.map((movie, index) => (
-                    <div key={index}>
+                    <div key={index} className="movie-content">
                       <h1 className="movie-name">{movie.title}</h1>
                       <p>{movie.description}</p>
                       <p className="year">{movie.year}</p>
                       <div className="trailer-button">
                         <button onClick={() => handleButtonClick(movie)}>
-                          Trailer
+                          Watch
                         </button>
-                        <button className="add-list">Add List</button>
+                        <button className="add-list">Add To List</button>
                       </div>
                     </div>
                   ))}

@@ -83,7 +83,7 @@ body {
         .navlinks::after {
           content: "";
           width: 100%;
-          transform: scale(0,1);
+          transform: scale(0, 1);
           position: absolute;
           height: 2px;
           border-radius: 1px;
@@ -97,11 +97,19 @@ body {
           color: white;
         }
         .navlinks:hover::after {
-          transform: scale(1,1);
+          transform: scale(1, 1);
         }
       }
       .movie {
         margin-top: 5vh;
+        .movie-content {
+          .trailer-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+          }
+        }
         h1 {
           font-size: 3.5rem;
           color: var(--secondary);
@@ -118,21 +126,6 @@ body {
         }
         .movie-type {
           font-size: 1.1rem;
-        }
-      }
-
-      .watch {
-        margin-top: 2vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .trailer-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 2vw;
-          border:2px solid red;
         }
       }
     }
