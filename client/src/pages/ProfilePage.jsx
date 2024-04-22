@@ -11,7 +11,7 @@ const ProfilePage = () => {
   };
   return (
     <div className="profilePage">
-      <Nav />
+    <Nav />
       <div className="Profilecontainer">
         <div className="profile-card">
           <div className="profile-header">

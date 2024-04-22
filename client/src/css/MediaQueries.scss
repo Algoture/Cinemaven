@@ -1,7 +1,7 @@
 @media screen and (width<=500px) {
   nav {
     width: 100vw;
-    height: 10vh;
+    height: 4.5rem;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -9,6 +9,19 @@
     align-items: center;
     justify-content: center;
     z-index: 5;
+    .active {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4.5rem;
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.365) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
   }
   .cinemaven {
     height: 100vh;
@@ -38,7 +51,7 @@
         height: 100%;
         position: relative;
         z-index: 1;
-        
+
         img {
           margin-left: 4vw;
           height: 80vh;
@@ -50,7 +63,7 @@
     .main {
       height: 100%;
       width: 100%;
-      border:2px solid red;
+      border: 2px solid red;
     }
 
     .trending-movie {
@@ -87,20 +100,6 @@
           }
           .movie-type {
             font-size: 1.1rem;
-          }
-        }
-
-        .watch {
-          margin-top: 2vh;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          .trailer-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2vw;
           }
         }
       }
