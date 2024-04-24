@@ -54,60 +54,73 @@ const SearchPage = () => {
   return (
     <>
       <Nav />
+
       <div className="searchPage">
-        <input
-          type="text"
-          placeholder="Search trailers by title..."
-          value={searchTerm}
-          onChange={handleInputChange}
-        />
-        <button onClick={searchTrailers}>Search</button>
-        {suggestions.length > 0 && (
-          <ul>
-            {suggestions.map((suggestion, index) => (
-              <li
-                key={index}
-                onClick={() => handleSuggestionClick(suggestion.title)}
-              >
-                {suggestion.title}
-              </li>
-            ))}
-          </ul>
-        )}
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <div>
-            {searchResults.length > 0 ? (
-              <div>
-                {searchResults.map((trailer, index) => (
-                  <div key={index}>
-                    <img
-                      src={trailer.image}
-                      alt={trailer.title}
-                      className="movie-poster"
-                    />
-                    <h3>{trailer.title}</h3>
-                    <p style={{ color: "black" }}>
-                      Release Date: {trailer.releaseDate}
-                    </p>
-                    <button>
-                      <a
-                        href={trailer.videoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Watch Trailer
-                      </a>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div>No results found</div>
-            )}
+        {/* <h1>Search Movies</h1> */}
+        <div className="left">
+          <div className="input">
+            <input
+              type="text"
+              placeholder="Search movies by title..."
+              value={searchTerm}
+              onChange={handleInputChange}
+            />
+            <button onClick={searchTrailers}>Search</button>
           </div>
-        )}
+          {suggestions.length > 0 && (
+            <ul>
+              {suggestions.map((suggestion, index) => (
+                <li
+                  key={index}
+                  onClick={() => handleSuggestionClick(suggestion.title)}
+                >
+                  {suggestion.title}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="right">
+          {loading ? (
+            <div style={{fontWeight: 700,fontSize: "1.5vw"}}>Loading...</div>
+          ) : (
+            <div>
+              {searchResults.length > 0 ? (
+                <div>
+                  {searchResults.map((trailer, index) => (
+                    <div className="results" key={index}>
+                      <img
+                        src={trailer.image}
+                        alt={trailer.title}
+                        className="movie-poster"
+                      />
+                      <div className="movie-details">
+                        <div className="title">
+                        <h3>{trailer.title}</h3>
+                        <p >
+                          Release Date: {trailer.releaseDate}
+                        </p>
+                        </div>
+                        <button className="searchBtn">
+                          <a
+                            href={trailer.videoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Watch Trailer
+                          </a>
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div style={{fontWeight: 700,fontSize: "1.5vw"}}>No results found</div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

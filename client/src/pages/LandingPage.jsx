@@ -55,15 +55,15 @@ const LandingPage = () => {
               <div className="scene-take-roll">
                 <div className="scene">
                   <p className="text">Scene:</p>
-                  <p className="scene__text test">2</p>
+                  <p className="scene__text test">07</p>
                 </div>
                 <div className="take">
                   <p className="text">Take:</p>
-                  <p className="take__text test">5</p>
+                  <p className="take__text test">45</p>
                 </div>
                 <div className="roll">
                   <p className="text">Roll:</p>
-                  <p className="roll__text test">4</p>
+                  <p className="roll__text test">46</p>
                 </div>
               </div>
               <div className="director">
