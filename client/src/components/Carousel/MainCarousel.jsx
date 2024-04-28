@@ -8,27 +8,10 @@ import { API_url_Trending, options } from "../../utils/Constants";
 const MainCarousel = ({ heading, start, end }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const fetchedData = useRef(false);
+  // const fetchedData = useRef(false);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (!fetchedData.current) {
-          // const res = await fetch(API_url_Trending, options);
-          // const data = await res.json();
-          // console.log(data);
-          setMovies(moviesData);
-          setLoading(false);
-          // const url = data.trailers[0].videoLink;
-          // const titleIndex = url.indexOf("/title/") + 7;
-          // const title = url.substring(titleIndex, url.indexOf("/", titleIndex));
-          // console.log(title);
-          fetchedData.current = true;
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
+    setMovies(moviesData);
+    setLoading(false);
   }, []);
 
   const responsive = {

@@ -1,29 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import { API_url_Trending, options } from "../utils/Constants";
 import { Nav } from "../Index";
+import moviesData from "../utils/Data";
 const SearchPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-  const fetchedData = useRef(false);
+  // const fetchedData = useRef(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (!fetchedData.current) {
-          const res = await fetch(API_url_Trending, options);
-          const data = await res.json();
-          setMovies(data.trailers);
-          setLoading(false);
-          fetchedData.current = true;
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
+    setMovies(moviesData);
+    setLoading(false);
   }, []);
 
   const handleInputChange = (e) => {
@@ -83,7 +72,7 @@ const SearchPage = () => {
 
         <div className="right">
           {loading ? (
-            <div style={{fontWeight: 700,fontSize: "1.5vw"}}>Loading...</div>
+            <div style={{ fontWeight: 700, fontSize: "1.5vw" }}>Loading...</div>
           ) : (
             <div>
               {searchResults.length > 0 ? (
@@ -97,10 +86,8 @@ const SearchPage = () => {
                       />
                       <div className="movie-details">
                         <div className="title">
-                        <h3>{trailer.title}</h3>
-                        <p >
-                          Release Date: {trailer.releaseDate}
-                        </p>
+                          <h3>{trailer.title}</h3>
+                          <p>Release Date: {trailer.releaseDate}</p>
                         </div>
                         <button className="searchBtn">
                           <a
@@ -116,7 +103,9 @@ const SearchPage = () => {
                   ))}
                 </div>
               ) : (
-                <div style={{fontWeight: 700,fontSize: "1.5vw"}}>No results found</div>
+                <div style={{ fontWeight: 700, fontSize: "1.5vw" }}>
+                  No results found
+                </div>
               )}
             </div>
           )}

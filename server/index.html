@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fetch JSON Example</title>
+</head>
+<body>
+
+<h1>JSON Response:</h1>
+<div id="jsonResponse"></div>
+
+<script>
+  fetch('/json')
+    .then(response => response.json())
+    .then(data => {
+        const name = data.name;
+        const formattedData = `Name: ${name}`;
+      document.getElementById('jsonResponse').innerText = formattedData;
+    })
+    .catch(error => console.error('Error fetching JSON:', error));
+</script>
+
+</body>
+</html>
