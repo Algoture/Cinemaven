@@ -20,6 +20,8 @@ cd Cinemaven/client
 Install Dependencies for Client:
 ```bash
 npm install
+To Start Client Application:
+```bash
 
 ```
 **Usage**
