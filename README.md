@@ -20,22 +20,7 @@ cd Cinemaven/client
 Install Dependencies for Client:
 ```bash
 npm install
-```
-Navigate to the Server Folder:
-```bash
-cd ../server
-```
-Install Dependencies for Server:
-```bash
-npm install
-```
-To Start the Client Application:
-```bash
-npm run dev
-```
-To Start the Server:
-```bash
-npm start
+
 ```
 **Usage**
 1.  **Sign Up or Log In**: Create an account or log in to your existing account.
