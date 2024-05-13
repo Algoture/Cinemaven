@@ -284,11 +284,11 @@ const movies = [
       "Po, the beloved dragon warrior, faces a new challenge when a powerful villain threatens the peace of the Valley of Peace, leading him on an epic journey of self-discovery and kung fu mastery. Horror / Thriller",
   },
   {
-    bgimage: "apesbgimage.jpg",
-    image: "apesplanet.jpg",
-    trailer: "XtFI7SNtVpY",
-    title: "Kingdom of the planet of the apes",
-    year: "2024",
+    bgimage: "bladerunner.jpg",
+    image: "blade.jpg",
+    trailer: "gCcx85zbxz4",
+    title: "Blade Runner 2049",
+    year: "2017",
     description:
       "In a future where humans and intelligent apes coexist precariously, young leader Nova must navigate rising tensions to prevent a catastrophic war. Action | Sci-Fi",
   },
