@@ -1,14 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
-import { API_url_Trending, options } from "../utils/Constants";
+import React, { useEffect, useState } from "react";
 import { Nav } from "../Index";
-import moviesData from "../utils/Data";
+import {moviesData} from "../utils/Data";
 const SearchPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-  // const fetchedData = useRef(false);
 
   useEffect(() => {
     setMovies(moviesData);

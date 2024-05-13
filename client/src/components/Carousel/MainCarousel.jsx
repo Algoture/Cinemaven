@@ -1,14 +1,12 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
-import moviesData from "../../utils/Data.js";
-import { API_url_Trending, options } from "../../utils/Constants";
+import {moviesData} from "../../utils/Data.js";
 
 const MainCarousel = ({ heading, start, end }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const fetchedData = useRef(false);
   useEffect(() => {
     setMovies(moviesData);
     setLoading(false);

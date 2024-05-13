@@ -273,4 +273,43 @@ const moviesData = [
   },
 ];
 
-export default moviesData;
+const movies = [
+  {
+    bgimage: "https://images8.alphacoders.com/134/1344546.jpeg",
+    image: "kung fu panda 4.jpg",
+    trailer: "_inKs4eeHiI",
+    title: "Kung Fu Panda 4",
+    year: "2024",
+    description:
+      "Po, the beloved dragon warrior, faces a new challenge when a powerful villain threatens the peace of the Valley of Peace, leading him on an epic journey of self-discovery and kung fu mastery. Horror / Thriller",
+  },
+  {
+    bgimage: "apesbgimage.jpg",
+    image: "apesplanet.jpg",
+    trailer: "XtFI7SNtVpY",
+    title: "Kingdom of the planet of the apes",
+    year: "2024",
+    description:
+      "In a future where humans and intelligent apes coexist precariously, young leader Nova must navigate rising tensions to prevent a catastrophic war. Action | Sci-Fi",
+  },
+  {
+    bgimage: "terminatorbgimage.jpg",
+    image: "terminator.jpg",
+    trailer: "jNU_jrPxs-0",
+    title: "Terminator Genisys",
+    year: "2015",
+    description:
+      "A cyborg assassin targets the mother of a future resistance leader, triggering a race against time as a soldier from the future is deployed to protect her. Action | Adventure | Sci-Fi",
+  },
+  {
+    bgimage: "dunebgimage.jpg",
+    image: "dune.jpg",
+    trailer: "n9xhJrPXop4",
+    title: "Dune",
+    year: "2021",
+    description:
+      "In a future of scarce resources, a young noble navigates political intrigue and desert perils to safeguard his family legacy. Action | Adventure | Drama",
+  },
+];
+
+export { moviesData, movies };
