@@ -1,10 +1,13 @@
-import { Nav } from "../Index";
+import { Nav, MainCarousel } from "../Index";
 
 const TvShowsPage = () => {
   return (
     <>
       <Nav />
-      <div style={{ marginLeft: "4vw" }}>TvShowsPage</div>
+      <div>
+        <MainCarousel start={0} end={10} heading={"Popular TV Shows"} />
+        <MainCarousel start={10} end={20} heading={"Top Shows"} />
+      </div>
     </>
   );
 };

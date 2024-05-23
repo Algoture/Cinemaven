@@ -1,10 +1,15 @@
-import { Nav } from "../Index";
+import { Nav, MainCarousel } from "../Index";
 
 const AllPage = () => {
   return (
     <>
       <Nav />
-      <div style={{ marginLeft: "4vw" }}>AllPage</div>
+      <div>
+        <MainCarousel start={0} end={10} heading={"Popular Now"} />
+        <MainCarousel start={10} end={20} heading={"Latest Releases"} />
+        <MainCarousel start={20} end={30} heading={"Trending"} />
+        <MainCarousel start={10} end={20} heading={"Top Rated On IMDB"} />
+      </div>
     </>
   );
 };
