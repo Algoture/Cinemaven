@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
-import {moviesData} from "../../utils/Data.js";
+import { moviesData } from "../../utils/Data.js";
 
 const MainCarousel = ({ heading, start, end }) => {
   const [movies, setMovies] = useState([]);
@@ -11,7 +11,6 @@ const MainCarousel = ({ heading, start, end }) => {
     setMovies(moviesData);
     setLoading(false);
   }, []);
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

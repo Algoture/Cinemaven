@@ -1,14 +1,17 @@
 import { Nav, MainCarousel } from "../Index";
-
+import "../css/Pages.scss";
 const AllPage = () => {
   return (
     <>
       <Nav />
-      <div>
-        <MainCarousel start={0} end={10} heading={"Popular Now"} />
-        <MainCarousel start={10} end={20} heading={"Latest Releases"} />
-        <MainCarousel start={20} end={30} heading={"Trending"} />
-        <MainCarousel start={10} end={20} heading={"Top Rated On IMDB"} />
+      <div className="allPage">
+        <div className="allPageTitle">
+          <p>
+            Enjoy All Your Favourite Movies, Shows at <span>Cinemaven</span>{" "}
+          </p>
+        </div>
+        <MainCarousel start={40} end={50} heading={"Popular Now"} />
+        <MainCarousel start={30} end={40} heading={"Latest Releases"} />
       </div>
     </>
   );

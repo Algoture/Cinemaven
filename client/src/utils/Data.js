@@ -271,6 +271,150 @@ const moviesData = [
     trailerLength: "1:47",
     videoLink: "https://www.imdb.com//title/tt27369385/?ref_=vi_tr_tr_tt_33",
   },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BYWRkZjJiODEtM2IwZi00ZjM1LWEyOTUtOThjMDk3YThjZDUzXkEyXkFqcGdeQXVyMTUzMTg2ODkz.300_.jpg",
+    releaseDate: "March 16, 2024",
+    title: "The Idea of You",
+    trailerLength: "5:40",
+    videoLink:
+      "https://www.imdb.com/title/tt9466114/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_the%2520idea%2520",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BZWIzN2FhN2ItNTYxMC00M2Q3LThiNGMtOWRjYjE5MDY4MjFiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.300_.jpg",
+    releaseDate: "May 9 2024",
+    title: "Mother of the Bride",
+    trailerLength: "2:10",
+    videoLink:
+      "https://www.imdb.com/title/tt26926267/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_mother%2520of%2520the%2520bride",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMjA5ZjA3ZjMtMzg2ZC00ZDc4LTk3MTctYTE1ZTUzZDIzMjQyXkEyXkFqcGdeQXVyMTM1NjM2ODg1.300_.jpg",
+    releaseDate: "March 12, 2024",
+    title: "The Fall Guy",
+    trailerLength: "3:02",
+    videoLink:
+      "https://www.imdb.com/title/tt1684562/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_The%2520Fall%2520Guy",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BY2JlYjlkNzMtNTU3OS00NDVmLTk4NTYtYTM4ZTEwMGM4NDBiXkEyXkFqcGdeQXVyMTUzMTg2ODkz.300_.jpg",
+    releaseDate: "April 7, 2024",
+    title: "Abigail",
+    trailerLength: "1:13",
+    videoLink:
+      "https://www.imdb.com/title/tt27489557/?ref_=nv_sr_srsg_0_tt_2_nm_6_q_Abigail",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BM2I4MDE3NTktZGI5Ny00MzcyLTk0NjItNmJiNDk3NDkzYzU1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@.300_.jpg",
+    releaseDate: "November 24, 2024",
+    title: "Wicked",
+    trailerLength: "3:33",
+    videoLink:
+      "https://www.imdb.com/title/tt1262426/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Wicked",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BZjIyOTBmNzEtY2YxNC00YzgyLTgxZGYtOWM4NTYwNmZkNzA1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@.300_.jpg",
+    releaseDate: "3 May 2024",
+    title: "Unfrosted",
+    trailerLength: "2:12",
+    videoLink:
+      "https://www.imdb.com/title/tt14914430/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_Unfrosted",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BOGE5NjllZTEtMGJjNy00ZTFmLThlNDItNmNiZTgyOTQ4OTA2XkEyXkFqcGdeQXVyMTUzMTg2ODkz.300_.jpg",
+    releaseDate: "December 22, 2023",
+    title: "The Iron Claw",
+    trailerLength: "2:22",
+    videoLink:
+      "https://www.imdb.com/title/tt21064584/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_The%2520Iron%2520Claw",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BYWJkY2Q4NmYtOGRlMi00YTg5LWE2ZmQtY2NkYzk3YTRmNWZlXkEyXkFqcGdeQXVyMTY3ODkyNDkz.300_.jpg",
+    releaseDate: "February 14, 2024",
+    title: "Madame Web",
+    trailerLength: "3:03",
+    videoLink:
+      "https://www.imdb.com/title/tt11057302/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_Madame%2520Web",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BYTYyODhlODktYjUzNC00NjUyLWI1MzYtNmI0MTY3YTUxYjY2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@.300_.jpg",
+    releaseDate: "November 24, 2024",
+    title: "Civil War",
+    trailerLength: "1:24",
+    videoLink:
+      "https://www.imdb.com/title/tt17279496/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Civil%2520War",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BZTc3YmEwYTgtM2E1YS00NGQ1LTg1NzYtNTMxMzA5ODFhZThhXkEyXkFqcGdeQXVyNzAwMjU2MTY@.300_.jpg",
+    releaseDate: "July 19, 2024",
+    title: "Twisters",
+    trailerLength: "3:07",
+    videoLink:
+      "https://www.imdb.com/title/tt12584954/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Twisters",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BOTVhZGU2OWQtNDM1Ni00MzM3LTgzYjgtOTEwYzQzOWZjNTIyXkEyXkFqcGdeQXVyMTcwOTQzOTYy.300_.jpg",
+    releaseDate: "March 15, 2024",
+    title: "Dune: Part Two",
+    trailerLength: "0:31",
+    videoLink:
+      "https://www.imdb.com/title/tt15239678/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Dune%253A%2520Part%2520Two",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BN2QyZGU4ZDctOWMzMy00NTc5LThlOGQtODhmNDI1NmY5YzAwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.300_.jpg",
+    releaseDate: "December 15, 2023",
+    title: "Anyone But You",
+    trailerLength: "2:34",
+    videoLink:
+      "https://www.imdb.com/title/tt26047818/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Anyone%2520But%2520You",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BYjQ5OTI3MWYtN2NkZC00MzE3LWE1NGItZjI0ZjFiZTIzOWFkXkEyXkFqcGdeQXVyMTA2MDU0NjM5.300_.jpg",
+    releaseDate: "October 25, 2024",
+    title: "Back to Black",
+    trailerLength: "0:31",
+    videoLink:
+      "https://www.imdb.com/title/tt21261712/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Back%2520to%2520Black",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@.300_.jpg",
+    releaseDate: "May 15, 2015",
+    title: "Mad Max: Fury Road",
+    trailerLength: "2:29",
+    videoLink:
+      "https://www.imdb.com/title/tt1392190/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Mad%2520Max%253A%2520Fury%2520Road",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BOTI5MjNjMTMtN2NiNC00YjBlLTgzMWQtMGRhZDZkYmY1NGU2XkEyXkFqcGdeQXVyNTgyNTA4MjM@.300_.jpg",
+    releaseDate: "June 23, 2023",
+    title: "Godzilla Minus One",
+    trailerLength: "2:00",
+    videoLink:
+      "https://www.imdb.com/title/tt23289160/?ref_=nv_sr_srsg_0_tt_1_nm_0_q_Godzilla%2520Minus%2520One",
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMTcwOWE3NjUtYTJhNy00ZDdjLWJiMGItMzQ0ODQ1NmQ2ZmRkXkEyXkFqcGdeQXVyMTQ2Mzc5OTIz.300_.jpg",
+    releaseDate: "August 7, 2024",
+    title: "It Ends with Us",
+    trailerLength: "2:26",
+    videoLink:
+      "https://www.imdb.com/title/tt10655524/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_It%2520Ends%2520with%2520Us",
+  },
 ];
 
 const movies = [
@@ -278,8 +422,11 @@ const movies = [
     bgimage: "https://images8.alphacoders.com/134/1344546.jpeg",
     image: "kung fu panda 4.jpg",
     trailer: "_inKs4eeHiI",
+    trailerLength: "2:27",
     title: "Kung Fu Panda 4",
     year: "2024",
+    moviecode: "tt21692408",
+    movielength: "1h 34m",
     description:
       "Po, the beloved dragon warrior, faces a new challenge when a powerful villain threatens the peace of the Valley of Peace, leading him on an epic journey of self-discovery and kung fu mastery. Horror / Thriller",
   },
@@ -287,8 +434,11 @@ const movies = [
     bgimage: "bladerunner.jpg",
     image: "blade.jpg",
     trailer: "gCcx85zbxz4",
+    trailerLength: "2:22",
     title: "Blade Runner 2049",
     year: "2017",
+    movielength: "2h 43m",
+    moviecode: "tt1856101",
     description:
       "In a future where humans and intelligent apes coexist precariously, young leader Nova must navigate rising tensions to prevent a catastrophic war. Action | Sci-Fi",
   },
@@ -296,8 +446,11 @@ const movies = [
     bgimage: "terminatorbgimage.jpg",
     image: "terminator.jpg",
     trailer: "jNU_jrPxs-0",
+    trailerLength: "2:31",
     title: "Terminator Genisys",
     year: "2015",
+    moviecode: "tt1340138",
+    movielength: "2h 6m",
     description:
       "A cyborg assassin targets the mother of a future resistance leader, triggering a race against time as a soldier from the future is deployed to protect her. Action | Adventure | Sci-Fi",
   },
@@ -305,8 +458,11 @@ const movies = [
     bgimage: "dunebgimage.jpg",
     image: "dune.jpg",
     trailer: "n9xhJrPXop4",
+    trailerLength: "3:05",
     title: "Dune",
     year: "2021",
+    moviecode: "tt1160419",
+    movielength: "2h 35m",
     description:
       "In a future of scarce resources, a young noble navigates political intrigue and desert perils to safeguard his family legacy. Action | Adventure | Drama",
   },

@@ -45,7 +45,7 @@ function TrailerPage() {
               <span className="shadow"></span>
               <div className="content">
                 <h1>Trailer</h1>
-                <b>2m</b>
+                <b>{movie.trailerLength}</b>
               </div>
             </div>
             <div className="watch-card">
@@ -59,7 +59,7 @@ function TrailerPage() {
               <span className="shadow"></span>
               <div className="content">
                 <h1>MOVIE</h1>
-                <b>2h 12m</b>
+                <b>{movie.movielength}</b>
               </div>
             </div>
             <div className="watch-card">
@@ -88,8 +88,8 @@ function TrailerPage() {
             >
               <iframe
                 className="iFrame2"
-                title="YouTube video player"
-                src="https://www.2embed.cc/embed/tt1856101"
+                title="Movie player"
+                src={`https://www.2embed.cc/embed/${movie.moviecode}`}
                 allowfullscreen
               ></iframe>
             </div>

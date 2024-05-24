@@ -153,7 +153,6 @@
         text-align: center;
         display: flex;
         align-items: center;
-
       }
       button:hover {
         background-color: #1d1d1d;
@@ -189,22 +188,22 @@
         align-items: left;
         gap: 1vh;
 
-      .title{
+        .title {
           width: 65%;
-        h3{
-          font-size: 1.8vw;
-          font-weight: 500;
-         }
-  
-         p{
-          color: white;
-          font-size: 1vw;
-          text-align: left;
-          margin-top: 0;
-          padding: 0;
-         }
-      }
-        
+          h3 {
+            font-size: 1.8vw;
+            font-weight: 500;
+          }
+
+          p {
+            color: white;
+            font-size: 1vw;
+            text-align: left;
+            margin-top: 0;
+            padding: 0;
+          }
+        }
+
         .searchBtn {
           height: 7vh;
           width: 10vw;
@@ -215,8 +214,8 @@
             color: #000;
           }
         }
-        .searchBtn:hover{
-          a{
+        .searchBtn:hover {
+          a {
             color: white;
           }
         }
@@ -233,5 +232,26 @@
 
   li {
     cursor: pointer;
+  }
+}
+
+.allPage {
+  width: 100%;
+  height: 10vh;
+  .allPageTitle {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe24b;
+    p {
+      color: #1d1d1d;
+      display: flex;
+      gap: 10px;
+      span{
+        color: rgb(109, 109, 109);
+      }
+    }
   }
 }

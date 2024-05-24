@@ -48,7 +48,7 @@ const Cinemaven = React.memo(() => {
             partialVisible={false}
             containerClass="movie"
             pauseOnHover={false}
-            autoPlaySpeed={7000}
+            autoPlaySpeed={5000}
             customTransition="all 1s"
             infinite={true}
             transitionDuration={500}
@@ -87,7 +87,7 @@ const Cinemaven = React.memo(() => {
                   autoPlay={true}
                   containerClass="movie"
                   pauseOnHover={false}
-                  autoPlaySpeed={7000}
+                  autoPlaySpeed={5000}
                   customTransition="all 1s"
                   infinite={true}
                   transitionDuration={500}
@@ -115,7 +115,7 @@ const Cinemaven = React.memo(() => {
       <MainCarousel start={0} end={10} heading={"Popular Now"} />
       <MainCarousel start={10} end={20} heading={"Latest Releases"} />
       <MainCarousel start={20} end={30} heading={"Trending"} />
-      <MainCarousel start={10} end={20} heading={"Top Rated On IMDB"} />
+      <MainCarousel start={30} end={40} heading={"Top Rated On IMDB"} />
     </>
   );
 });

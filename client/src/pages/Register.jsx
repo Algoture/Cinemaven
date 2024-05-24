@@ -22,6 +22,7 @@ const Register = () => {
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
       await updateProfile(firebaseAuth.currentUser, { displayName: name });
       toast.success("Account Created  Successfully!");
+      alert("Account Created  Successfully!");
       navigate("/login");
     } catch (error) {
       const errorMessage = error.message;
