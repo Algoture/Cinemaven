@@ -3,6 +3,7 @@
   --secondary: #fff;
   --accent: #ffe24b;
 }
+
 .carousel {
   display: flex;
   flex-direction: row;
@@ -73,21 +74,26 @@
   align-items: center;
   gap: 0.5rem;
   flex-direction: column;
+
   img {
     width: 200px;
     height: 200px;
   }
+
   p {
     color: #1d1d1d;
   }
+
   #access-button {
     a {
       color: #1d1d1d;
     }
   }
+
   #access-button:hover {
     background-color: #1d1d1d;
   }
+
   #access-button:hover a {
     color: white;
   }
@@ -97,6 +103,7 @@
   background-color: rgb(53, 53, 53);
   height: 300px;
   width: 100%;
+
   .Trending {
     margin-left: 4.5vw;
     color: var(--secondary);
@@ -112,13 +119,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   .authloader {
     width: 30px;
     aspect-ratio: 2;
-    --first: no-repeat
-      radial-gradient(circle closest-side, var(--secondary) 90%, #0000);
-    --second: no-repeat
-      radial-gradient(circle closest-side, var(--primary) 90%, #0000);
+    --first: no-repeat radial-gradient(circle closest-side, var(--secondary) 90%, #0000);
+    --second: no-repeat radial-gradient(circle closest-side, var(--primary) 90%, #0000);
     background: var(--second) 0% 50%, var(--first) 50% 50%,
       var(--second) 100% 50%;
     background-size: calc(100% / 3) 50%;
@@ -132,29 +138,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   .loader {
     width: 60px;
     aspect-ratio: 2;
-    --first: no-repeat
-      radial-gradient(circle closest-side, var(--accent) 90%, #0000);
-    --second: no-repeat
-      radial-gradient(circle closest-side, var(--primary) 90%, #0000);
+    --first: no-repeat radial-gradient(circle closest-side, var(--accent) 90%, #0000);
+    --second: no-repeat radial-gradient(circle closest-side, var(--primary) 90%, #0000);
     background: var(--second) 0% 50%, var(--first) 50% 50%,
       var(--second) 100% 50%;
     background-size: calc(100% / 3) 50%;
     animation: l3 1s infinite linear;
   }
 }
+
 @keyframes l3 {
   20% {
     background-position: 0% 0%, 50% 50%, 100% 50%;
   }
+
   40% {
     background-position: 0% 100%, 50% 0%, 100% 50%;
   }
+
   60% {
     background-position: 0% 50%, 50% 100%, 100% 0%;
   }
+
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }

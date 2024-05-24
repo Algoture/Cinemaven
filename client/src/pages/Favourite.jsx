@@ -14,7 +14,7 @@ const Favourite = () => {
     <>
       <Nav />
       <div className="WishListPage">
-        <h1>User Favourite Movie List here :</h1>
+        <h1>Wishlist</h1>
         {wishlist.length === 0 ? (
           <p>No items in wishlist</p>
         ) : (
@@ -23,7 +23,7 @@ const Favourite = () => {
               <div key={index} className="wishlist-item">
                 <img src={item.image} alt={item.title} />
                 <button onClick={() => handleRemoveFromWishlist(item)
-                  
+
                 }>
                   Remove
                 </button>

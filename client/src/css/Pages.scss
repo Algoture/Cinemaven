@@ -3,29 +3,35 @@
   --secondary: #fff;
   --accent: #ffe24b;
 }
+
 .teaserpage {
   padding-left: 4vw;
   width: 100vw;
   height: 100vh;
   background-color: var(--secondary);
   display: flex;
+
   .teaserdetails {
     width: 70%;
     height: 100%;
   }
+
   .teaserCards {
     width: 30%;
     height: 100%;
   }
+
   .teaserh1 {
     color: #1d1d1d;
   }
+
   .teaserimage {
     border-radius: 25px;
     width: 200px;
     height: 300px;
   }
 }
+
 .password {
   width: 90%;
   height: 2.5rem;
@@ -34,6 +40,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   img {
     height: 2rem;
     width: 2rem;
@@ -41,6 +48,7 @@
     cursor: pointer;
   }
 }
+
 #error-page {
   display: flex;
   justify-content: center;
@@ -49,25 +57,30 @@
   height: 100vh;
   width: 100vw;
 }
+
 .WishListPage,
 .profile {
   padding-left: 4vw;
+
   h1 {
     color: black;
   }
 }
-.WishListPage{
-  .wishlist-container{
-    .wishlist-item{
+
+.WishListPage {
+  .wishlist-container {
+    .wishlist-item {
       display: flex;
-      img{
+
+      img {
         height: 220px;
-      width: 170px;
-      border-radius: 12px;
+        width: 170px;
+        border-radius: 12px;
       }
     }
   }
 }
+
 .loginPage,
 .registrationPage {
   position: relative;
@@ -101,6 +114,7 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .registerCard {
   width: clamp(350px, 70%, 400px);
   height: clamp(400px, 95%, 700px);
@@ -111,11 +125,13 @@
   background-color: rgba(53, 53, 53, 0.927);
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
+
 .passwordforgot {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .usernameForm {
   gap: 1rem;
 }
@@ -131,6 +147,7 @@
   h1 {
     color: black;
   }
+
   .left {
     margin-top: 2vh;
     width: 50vw;
@@ -146,6 +163,7 @@
       gap: 2vw;
 
       flex-direction: row;
+
       input[type="text"] {
         height: 7vh;
         width: 5vw;
@@ -160,17 +178,20 @@
         border-radius: 5px;
         border-bottom: gray;
       }
+
       button {
         height: 7vh;
         text-align: center;
         display: flex;
         align-items: center;
       }
+
       button:hover {
         background-color: #1d1d1d;
         color: white;
       }
     }
+
     li {
       list-style-type: none;
       height: 8vh;
@@ -202,6 +223,7 @@
 
         .title {
           width: 65%;
+
           h3 {
             font-size: 1.8vw;
             font-weight: 500;
@@ -222,16 +244,19 @@
           text-align: center;
           display: flex;
           align-items: center;
+
           a {
             color: #000;
           }
         }
+
         .searchBtn:hover {
           a {
             color: white;
           }
         }
       }
+
       .movie-poster {
         margin-left: 2vw;
         height: 100%;
@@ -250,6 +275,7 @@
 .allPage {
   width: 100%;
   height: 10vh;
+
   .allPageTitle {
     width: 100%;
     height: 10vh;
@@ -257,12 +283,60 @@
     justify-content: center;
     align-items: center;
     background-color: #ffe24b;
+
     p {
       color: #1d1d1d;
       display: flex;
       gap: 10px;
-      span{
+
+      span {
         color: rgb(109, 109, 109);
+      }
+    }
+  }
+}
+
+.WishListPage {
+  color: white;
+  padding-left: 5vw;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #172331, #1E1D5F, #852586);
+
+  h1 {
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .wishlist-container {
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 6vw;
+    gap: 4vw;
+    // border: 2px solid white;
+
+    .wishlist-item {
+      position: relative; // Ensure the button is positioned relative to this container
+
+      img {
+        height: 30vh;
+        width: 10vw;
+        border-radius: 10px;
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover button {
+        opacity: 1;
       }
     }
   }
