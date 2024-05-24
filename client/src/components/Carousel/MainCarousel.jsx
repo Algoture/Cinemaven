@@ -44,6 +44,7 @@ const MainCarousel = ({ heading, start, end }) => {
             autoPlaySpeed={2000}
             customTransition="all 2s"
             transitionDuration={700}
+            pauseOnHover={true}
             removeArrowOnDeviceType={["mobile"]}
             swipeable={false}
           >

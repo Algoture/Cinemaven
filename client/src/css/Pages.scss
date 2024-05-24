@@ -49,11 +49,23 @@
   height: 100vh;
   width: 100vw;
 }
-.trial,
+.WishListPage,
 .profile {
   padding-left: 4vw;
   h1 {
     color: black;
+  }
+}
+.WishListPage{
+  .wishlist-container{
+    .wishlist-item{
+      display: flex;
+      img{
+        height: 220px;
+      width: 170px;
+      border-radius: 12px;
+      }
+    }
   }
 }
 .loginPage,
