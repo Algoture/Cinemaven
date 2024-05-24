@@ -7,30 +7,30 @@ import "../css/Pages.scss";
 const Favourite = () => {
   const wishlist = useSelector(selectWishlist);
   const dispatch = useDispatch();
-  const handleRemoveFromWishlist = (item) => {
-    dispatch(removeFromWishlist(item));
+
+  const handleRemoveFromWishlist = (id) => {
+    dispatch(removeFromWishlist({ id }));
   };
+
   return (
     <>
       <Nav />
       <div className="WishListPage">
         <h1>Wishlist</h1>
-        {wishlist.length === 0 ? (
-          <p>No items in wishlist</p>
-        ) : (
-          <div className="wishlist-container">
-            {wishlist.map((item, index) => (
-              <div key={index} className="wishlist-item">
+        <div className="wishlist-container">
+          {wishlist.length === 0 ? (
+            <p>No items in wishlist</p>
+          ) : (
+            wishlist.map((item) => (
+              <div key={item.id} className="wishlist-item">
                 <img src={item.image} alt={item.title} />
-                <button onClick={() => handleRemoveFromWishlist(item)
-
-                }>
+                <button onClick={() => handleRemoveFromWishlist(item.id)}>
                   Remove
                 </button>
               </div>
-            ))}
-          </div>
-        )}
+            ))
+          )}
+        </div>
       </div>
     </>
   );

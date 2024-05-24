@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+let nextItemId = 1; // Initialize the unique id counter
+
 export const UserSlice = createSlice({
   name: "user",
   initialState: {
@@ -15,19 +17,20 @@ export const UserSlice = createSlice({
       state.wishlist = [];
     },
     addToWishlist: (state, action) => {
-      state.wishlist.push(action.payload);
+      const newItem = {
+        id: nextItemId++,
+        ...action.payload,
+      };
+      state.wishlist.push(newItem);
     },
     removeFromWishlist: (state, action) => {
       const itemIdToRemove = action.payload.id;
-      state.wishlist = state.wishlist.filter(
-        (item) => item.id !== itemIdToRemove
-      );
+      state.wishlist = state.wishlist.filter(item => item.id !== itemIdToRemove);
     },
   },
 });
 
-export const { login, logout, addToWishlist, removeFromWishlist } =
-  UserSlice.actions;
+export const { login, logout, addToWishlist, removeFromWishlist } = UserSlice.actions;
 export const selectUser = (state) => state.user.user;
 export const selectWishlist = (state) => state.user.wishlist;
 export default UserSlice.reducer;
