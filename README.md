@@ -6,6 +6,8 @@ Cinemaven is an innovative OTT (Over-The-Top) platform designed to revolutionize
 - **User Profiles**: Create multiple user profiles to cater to different tastes within your household.
 - **Search and Filter**: Easily search for content and filter by genre, release date, and more.
 - **Cross-Platform Compatibility**: Enjoy Cinemaven on your desktop, mobile devices, and smart TVs.
+- **Secured Authentication System**: Ensure user data protection with multi-factor authentication and encryption.
+- **Wish List**: Allow users to create a wish list of movies and TV shows they plan to watch later.
 
 
 **Installation Instructions :**
