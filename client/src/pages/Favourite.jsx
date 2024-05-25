@@ -19,7 +19,10 @@ const Favourite = () => {
         <h1>Wishlist</h1>
         <div className="wishlist-container">
           {wishlist.length === 0 ? (
-            <p>No items in wishlist</p>
+            <div className="empty">
+              <h1>Your Wish List is Empty !</h1>
+              <p> Start exploring our collection and add your favorite films. </p>
+            </div>
           ) : (
             wishlist.map((item) => (
               <div key={item.id} className="wishlist-item">

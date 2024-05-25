@@ -299,8 +299,18 @@
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 6vw;
+    padding: 0 5vw;
     gap: 4vw;
+    .empty{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      p{
+        font-size: 1rem;
+      }
+    }
     .wishlist-item {
       position: relative;
       img {
