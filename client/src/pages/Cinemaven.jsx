@@ -102,7 +102,7 @@ const Cinemaven = React.memo(() => {
                         <button onClick={() => handleButtonClick(movie)}>
                           Watch
                         </button>
-                        <button className="add-list">Add To List</button>
+                        {/* <button className="add-list">Add To List</button> */}
                       </div>
                     </div>
                   ))}

@@ -76,7 +76,7 @@ function TrailerPage() {
                 className="iFrame"
                 src={`https://www.youtube.com/embed/${movie.trailer}?autoplay=1&mute=1`}
                 title="YouTube video player"
-                allowFullScreen
+                // allowFullScreen
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
               ></iframe>
             </div>
@@ -90,7 +90,7 @@ function TrailerPage() {
                 className="iFrame2"
                 title="Movie player"
                 src={`https://www.2embed.cc/embed/${movie.moviecode}`}
-                allowfullscreen
+                // allowfullscreen
               ></iframe>
             </div>
           )}

@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToWishlist } from "../../app/UserSlice";
+import { useState } from "react";
 
 const CarouselBox = ({ actualData }) => {
   const { image, title, videoLink, trailerLength, releaseDate } = actualData;
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const [flag, setFlag] = useState(false);
   const handleButtonClick = () => {
     navigate("/teaser", {
       state: { title, videoLink, image, trailerLength, releaseDate },
@@ -15,6 +16,7 @@ const CarouselBox = ({ actualData }) => {
 
   const handleAddToWishlist = () => {
     dispatch(addToWishlist(actualData));
+    setFlag(true);
   };
 
   if (!image) {
@@ -31,7 +33,7 @@ const CarouselBox = ({ actualData }) => {
               Watch
             </button>
             <button className="wish-list" onClick={handleAddToWishlist}>
-              +
+              {flag ? "✓":"+" }
             </button>
           </div>
         </div>
