@@ -6,6 +6,8 @@ Cinemaven is an innovative OTT (Over-The-Top) platform designed to revolutionize
 - **User Profiles**: Create multiple user profiles to cater to different tastes within your household.
 - **Search and Filter**: Easily search for content and filter by genre, release date, and more.
 - **Cross-Platform Compatibility**: Enjoy Cinemaven on your desktop, mobile devices, and smart TVs.
+- **Secured Authentication System**: Ensure user data protection with multi-factor authentication and encryption.
+- **Wish List**: Allow users to create a wish list of movies and TV shows they plan to watch later.
 
 
 **Installation Instructions :**
@@ -21,22 +23,12 @@ Install Dependencies for Client:
 ```bash
 npm install
 ```
-Navigate to the Server Folder:
-```bash
-cd ../server
-```
-Install Dependencies for Server:
-```bash
-npm install
-```
+
 To Start the Client Application:
 ```bash
 npm run dev
 ```
-To Start the Server:
-```bash
-npm start
-```
+
 **Usage**
 1.  **Sign Up or Log In**: Create an account or log in to your existing account.
 2.  **Browse Content**: Explore the vast library of movies and shows.
