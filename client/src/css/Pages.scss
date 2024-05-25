@@ -67,20 +67,6 @@
   }
 }
 
-.WishListPage {
-  .wishlist-container {
-    .wishlist-item {
-      display: flex;
-
-      img {
-        height: 220px;
-        width: 170px;
-        border-radius: 12px;
-      }
-    }
-  }
-}
-
 .loginPage,
 .registrationPage {
   position: relative;
@@ -301,7 +287,7 @@
   padding-left: 5vw;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(to right, #172331, #1E1D5F, #852586);
+  background: linear-gradient(to bottom, #1f1e2e, #ffe24b);
 
   h1 {
     color: white;
@@ -315,17 +301,13 @@
     flex-wrap: wrap;
     padding: 0 6vw;
     gap: 4vw;
-    // border: 2px solid white;
-
     .wishlist-item {
-      position: relative; // Ensure the button is positioned relative to this container
-
+      position: relative;
       img {
-        height: 30vh;
-        width: 10vw;
-        border-radius: 10px;
+        height: 220px;
+        width: 170px;
+        border-radius: 12px;
       }
-
       button {
         position: absolute;
         top: 50%;
