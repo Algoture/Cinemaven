@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Nav } from "../Index";
 import { selectWishlist, removeFromWishlist } from "../app/UserSlice";
 import "../css/Pages.scss";
+import { NavLink } from "react-router-dom";
 
 const Favourite = () => {
   const wishlist = useSelector(selectWishlist);
@@ -20,8 +21,14 @@ const Favourite = () => {
         <div className="wishlist-container">
           {wishlist.length === 0 ? (
             <div className="empty">
-              <h1>Your Wish List is Empty !</h1>
-              <p> Start exploring our collection and add your favorite films. </p>
+              <img src="empty-box.png" alt="" />
+              <h1 className="wishtitle">Your wishlist is empty !</h1>
+              <p>
+                Start exploring our collection and add your favorite films.{" "}
+              </p>
+              <NavLink to="/cinemaven">
+                <button>Start Exploring</button>
+              </NavLink>
             </div>
           ) : (
             wishlist.map((item) => (
