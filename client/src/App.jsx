@@ -24,8 +24,9 @@ import {
   MorePage,
   SearchPage,
   firebaseAuth,
+  ForgotPasswordPage,
+  TeaserPage,
 } from "./Index";
-import TeaserPage from "./pages/TeaserPage";
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -60,6 +61,10 @@ function App() {
       <Routes>
         <Route path="/" element={user ? <Cinemaven /> : <LandingPage />} />
         <Route path="/login" element={user ? <Cinemaven /> : <LoginPage />} />
+        <Route
+          path="/forgotPassword"
+          element={user ? <Cinemaven /> : <ForgotPasswordPage />}
+        />
         <Route path="/register" element={user ? <Cinemaven /> : <Register />} />
         <Route
           path="/favourite"

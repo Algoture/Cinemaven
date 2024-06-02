@@ -11,6 +11,8 @@ import TvShowsPage from "./pages/TvShowsPage";
 import MorePage from "./pages/MorePage";
 import SearchPage from "./pages/SearchPage";
 import TrailerPage from "./pages/TrailerPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import TeaserPage from "./pages/TeaserPage";
 
 // Components :
 import Nav from "./components/Nav";
@@ -21,6 +23,8 @@ import { firebaseAuth } from "./utils/firebase";
 
 // Export Pages  :
 export {
+  TeaserPage,
+  ForgotPasswordPage,
   TrailerPage,
   SearchPage,
   MorePage,

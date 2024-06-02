@@ -45,24 +45,21 @@ const LoginPage = () => {
             method="post"
             onSubmit={loginUser}
           >
-            <label>
-              <b>Email</b>
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter Email"
-              required
-              autoFocus
-              autoComplete="on"
-            />
-            <label className="passwordforgot">
-              <b>Password</b>
-              <NavLink to="">Forgot Password?</NavLink>
-            </label>
+            <div className="email">
+              <img src="email.png" alt="" />
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter Email"
+                required
+                autoFocus
+                autoComplete="on"
+              />
+            </div>
             <div className="password">
+              <img className="passwordimg" src="password.png" alt="" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter Password"
@@ -74,12 +71,16 @@ const LoginPage = () => {
                 autoComplete="current-password"
               />
               <img
-                  src={showPassword ? "closed-eye.png" : "open-eye.png"}
-                  alt=""
-                  onClick={toggleShowPassword}
-                />
+                src={showPassword ? "closed-eye.png" : "open-eye.png"}
+                alt=""
+                className="showpasswordicon"
+                onClick={toggleShowPassword}
+              />
             </div>
-            <button type="submit" disabled={loading}>
+            <label className="passwordforgot">
+              <NavLink to="/forgotPassword">Forgot Password?</NavLink>
+            </label>
+            <button type="submit" disabled={loading} id="submit">
               {loading ? (
                 <div className="authloading">
                   <div className="authloader"></div>
@@ -88,6 +89,17 @@ const LoginPage = () => {
                 "Login"
               )}
             </button>
+            <h2>Or Sign In With</h2>
+            <div id="signInWith">
+              <div className="google">
+                <img src="google.png" alt="" />
+                Continue With Google
+              </div>
+              <div className="facebook">
+                <img src="facebook.png" alt="" />
+                Continue With FaceBook
+              </div>
+            </div>
           </form>
           <span>
             Don't have an account? <NavLink to="/register">Register</NavLink>

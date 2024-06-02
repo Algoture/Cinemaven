@@ -4,6 +4,43 @@
   --accent: #ffe24b;
 }
 
+#landingPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--accent);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  h1 {
+    font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
+    color: var(--primary);
+    display: flex;
+
+    span {
+      background: -webkit-linear-gradient(#dfdfdf, #1d1d1d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .getStart {
+    cursor: pointer;
+    padding: 1rem;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 2px;
+    color: var(--secondary);
+    border-radius: 5px;
+  }
+  .getStart:hover {
+    background-color: var(--secondary);
+    color: #1d1d1d;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+}
+
 .teaserpage {
   background-image: url("https://images.unsplash.com/photo-1595769816263-9b910be24d5f?q=80&w=2958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ");
   background-size: cover;
@@ -52,23 +89,6 @@
   }
 }
 
-.password {
-  width: 90%;
-  height: 2.5rem;
-  border-radius: 10px;
-  background-color: var(--secondary);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  img {
-    height: 2rem;
-    width: 2rem;
-    margin-right: 1rem;
-    cursor: pointer;
-  }
-}
-
 #error-page {
   display: flex;
   justify-content: center;
@@ -103,13 +123,81 @@
 
 .loginCard {
   width: clamp(300px, 50%, 400px);
-  height: clamp(300px, 70%, 500px);
+  height: clamp(500px, 70%, 700px);
   background-color: rgba(53, 53, 53, 0.927);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  .email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    img {
+      margin-left: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  .password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    .passwordimg {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: 0.5rem;
+      cursor: default;
+    }
+    .showpasswordicon {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+  #signInWith {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    .google,
+    .facebook {
+      cursor: pointer;
+      background-color: var(--secondary);
+      width: 70%;
+      height: 2.7rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+  .passwordforgot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  h2 {
+    color: var(--secondary);
+  }
+  #submit {
+    width: 90%;
+  }
 }
 
 .registerCard {
@@ -121,16 +209,69 @@
   justify-content: space-evenly;
   background-color: rgba(53, 53, 53, 0.927);
   border: 1px solid rgba(209, 213, 219, 0.3);
-}
-
-.passwordforgot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.usernameForm {
-  gap: 1rem;
+  .email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    img {
+      margin-left: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  .password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    .passwordimg {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: 0.5rem;
+      cursor: default;
+    }
+    .showpasswordicon {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+  h2 {
+    color: var(--secondary);
+  }
+  #submit {
+    width: 90%;
+  }
+  #signInWith {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    .google,
+    .facebook {
+      cursor: pointer;
+      background-color: var(--secondary);
+      width: 70%;
+      height: 2.7rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
 }
 
 .searchPage {

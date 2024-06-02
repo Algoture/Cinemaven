@@ -42,9 +42,6 @@ const Register = () => {
         <div className="registerCard">
           <form id="signupForm" onSubmit={registration}>
             <p>Sign Up</p>
-            <label>
-              <b>Name</b>
-            </label>
             <input
               type="text"
               name="username"
@@ -54,22 +51,20 @@ const Register = () => {
               autoFocus
               required
             />
-            <label>
-              <b>Email</b>
-            </label>
-            <input
-              type="email"
-              placeholder="Enter Email"
-              name="email"
-              required
-              value={email}
-              autoComplete="on"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label>
-              <b>Password</b>
-            </label>
+            <div className="email">
+              <img src="email.png" alt="" />
+              <input
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                required
+                value={email}
+                autoComplete="on"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
             <div className="password">
+              <img className="passwordimg" src="password.png" alt="" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter Password"
@@ -83,10 +78,11 @@ const Register = () => {
               <img
                 src={showPassword ? "closed-eye.png" : "open-eye.png"}
                 alt=""
+                className="showpasswordicon"
                 onClick={toggleShowPassword}
               />
             </div>
-            <button type="submit" disabled={loading}>
+            <button type="submit" disabled={loading} id="submit">
               {loading ? (
                 <div className="authloading">
                   <div className="authloader"></div>
@@ -95,6 +91,17 @@ const Register = () => {
                 "Register"
               )}
             </button>
+            <h2>Or Sign In With</h2>
+            <div id="signInWith">
+              <div className="google">
+                <img src="google.png" alt="" />
+                Continue With Google
+              </div>
+              <div className="facebook">
+                <img src="facebook.png" alt="" />
+                Continue With FaceBook
+              </div>
+            </div>
           </form>
           <span>
             Already Registered? <NavLink to="/login">Login</NavLink>
