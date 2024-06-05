@@ -7,7 +7,7 @@
 #landingPage {
   width: 100vw;
   height: 100vh;
-  background-color: var(--accent);
+  background-color: var(--primary);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,22 +15,33 @@
   text-align: center;
   h1 {
     font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
-    color: var(--primary);
-    display: flex;
-
+    color: var(--secondary);
     span {
-      background: -webkit-linear-gradient(#dfdfdf, #1d1d1d);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background: linear-gradient(to right, #fff, #ffe24b, #fff, #ffe24b, #fff);
+      background-clip: text;
+      // display: inline;
+      color: transparent;
+      font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
+      background-size: 200% auto;
+      animation: animated 5s infinite alternate;
+    }
+
+    @keyframes animated {
+      0% {
+        background-position: 0% 0;
+      }
+      100% {
+        background-position: 100% 0;
+      }
     }
   }
   .getStart {
     cursor: pointer;
     padding: 1rem;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     border: none;
     border-radius: 2px;
-    color: var(--secondary);
+    color: var(--primary);
     border-radius: 5px;
   }
   .getStart:hover {
@@ -125,8 +136,7 @@
   width: clamp(300px, 50%, 400px);
   height: clamp(500px, 70%, 700px);
   background-color: rgba(53, 53, 53, 0.927);
-  border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
