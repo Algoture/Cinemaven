@@ -1,18 +1,15 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Nav } from "../Index";
 import { selectWishlist, removeFromWishlist } from "../app/UserSlice";
-import "../css/Pages.scss";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { Nav } from "../Index";
+import "../css/Pages.scss";
 
 const Favourite = () => {
   const wishlist = useSelector(selectWishlist);
   const dispatch = useDispatch();
-
   const handleRemoveFromWishlist = (id) => {
     dispatch(removeFromWishlist({ id }));
   };
-
   return (
     <>
       <Nav />

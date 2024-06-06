@@ -1,14 +1,15 @@
 import { firebaseAuth, OAuth, EmailPassword } from "../Index";
+import { NavLink, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import useAuthHandlers from "../utils/OAuths";
 import { useState, useEffect } from "react";
 import {
   signInWithEmailAndPassword,
   isSignInWithEmailLink,
   signInWithEmailLink,
 } from "firebase/auth";
-import { NavLink, useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
 import "../css/Pages.scss";
-import useAuthHandlers from "../utils/OAuths";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

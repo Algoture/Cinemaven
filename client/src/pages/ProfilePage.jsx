@@ -1,7 +1,7 @@
-import { Nav, firebaseAuth } from "../Index";
 import { useNavigate } from "react-router-dom";
-import "../css/ProfilePage.css";
+import { Nav, firebaseAuth } from "../Index";
 import { signOut } from "firebase/auth";
+import "../css/ProfilePage.css";
 
 const ProfilePage = () => {
   const navigate = useNavigate();

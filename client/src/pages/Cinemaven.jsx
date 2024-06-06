@@ -1,12 +1,12 @@
-import React from "react";
-import {movies} from "../utils/Data";
 import { firebaseAuth, MainCarousel, Nav } from "../Index";
-import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
-import "../css/Cinemaven.scss";
 import "react-multi-carousel/lib/styles.css";
+import { signOut } from "firebase/auth";
+import { movies } from "../utils/Data";
+import "../css/Cinemaven.scss";
 import "../css/Pages.scss";
+import React from "react";
 
 const Cinemaven = React.memo(() => {
   const navigate = useNavigate();
@@ -17,7 +17,6 @@ const Cinemaven = React.memo(() => {
   const handleButtonClick = (movie) => {
     navigate("/movies", { state: { movie } });
   };
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

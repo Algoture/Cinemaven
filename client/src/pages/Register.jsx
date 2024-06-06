@@ -1,17 +1,13 @@
 import { firebaseAuth, OAuth, EmailPassword } from "../Index";
-import toast, { Toaster } from "react-hot-toast";
-import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import useAuthHandlers from "../utils/OAuths";
+import { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   updateProfile,
-  signInWithPopup,
   sendEmailVerification,
-  FacebookAuthProvider,
-  GoogleAuthProvider,
-  GithubAuthProvider,
 } from "firebase/auth";
-import useAuthHandlers from "../utils/OAuths";
 
 import "../css/Pages.scss";
 
