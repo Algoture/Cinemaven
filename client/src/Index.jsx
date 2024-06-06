@@ -16,6 +16,8 @@ import TeaserPage from "./pages/TeaserPage";
 
 // Components :
 import Nav from "./components/Nav";
+import OAuth from "./components/OAuth";
+import EmailPassword from "./components/EmailPassword";
 import MainCarousel from "./components/Carousel/MainCarousel";
 
 // Utilities :
@@ -40,7 +42,7 @@ export {
 };
 
 // Export Components  :
-export { MainCarousel, Nav };
+export { MainCarousel, Nav, OAuth, EmailPassword };
 
 // Export Utils  :
 export { firebaseAuth };

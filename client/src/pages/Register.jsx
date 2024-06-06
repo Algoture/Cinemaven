@@ -1,8 +1,18 @@
-import { firebaseAuth } from "../Index";
+import { firebaseAuth, OAuth, EmailPassword } from "../Index";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithPopup,
+  sendEmailVerification,
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
+import useAuthHandlers from "../utils/OAuths";
+
 import "../css/Pages.scss";
 
 const Register = () => {
@@ -11,19 +21,34 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { handleGoogleSignIn, handleFBSignIn, handleGitHubSignIn } =
+    useAuthHandlers();
   const navigate = useNavigate();
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
+  const emailPasswordProps = {
+    email,
+    setEmail,
+    password,
+    showPassword,
+    setPassword,
+    toggleShowPassword,
+    loading,
+    forgot: false,
+    auth: "Register",
+  };
+
   async function registration(event) {
     event.preventDefault();
     try {
       setLoading(true);
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
       await updateProfile(firebaseAuth.currentUser, { displayName: name });
-      toast.success("Account Created  Successfully!");
-      alert("Account Created  Successfully!");
+      await sendEmailVerification(firebaseAuth.currentUser);
       navigate("/login");
+      toast.success("Verification email sent!");
+      alert("Please Verify Your Email !");
     } catch (error) {
       const errorMessage = error.message;
       if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
@@ -51,57 +76,12 @@ const Register = () => {
               autoFocus
               required
             />
-            <div className="email">
-              <img src="email.png" alt="" />
-              <input
-                type="email"
-                placeholder="Enter Email"
-                name="email"
-                required
-                value={email}
-                autoComplete="on"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="password">
-              <img className="passwordimg" src="password.png" alt="" />
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter Password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                id="password"
-                autoComplete="current-password"
-              />
-              <img
-                src={showPassword ? "closed-eye.png" : "open-eye.png"}
-                alt=""
-                className="showpasswordicon"
-                onClick={toggleShowPassword}
-              />
-            </div>
-            <button type="submit" disabled={loading} id="submit">
-              {loading ? (
-                <div className="authloading">
-                  <div className="authloader"></div>
-                </div>
-              ) : (
-                "Register"
-              )}
-            </button>
-            <h2>Or Sign In With</h2>
-            <div id="signInWith">
-              <div className="google">
-                <img src="google.png" alt="" />
-                Continue With Google
-              </div>
-              <div className="facebook">
-                <img src="facebook.png" alt="" />
-                Continue With FaceBook
-              </div>
-            </div>
+            <EmailPassword {...emailPasswordProps} />
+            <OAuth
+              handleGoogleSignIn={handleGoogleSignIn}
+              handleFBSignIn={handleFBSignIn}
+              handleGitHubSignIn={handleGitHubSignIn}
+            />
           </form>
           <span>
             Already Registered? <NavLink to="/login">Login</NavLink>

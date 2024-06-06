@@ -60,12 +60,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={user ? <Cinemaven /> : <LandingPage />} />
-        <Route path="/login" element={user ? <Cinemaven /> : <LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route
           path="/forgotPassword"
           element={user ? <Cinemaven /> : <ForgotPasswordPage />}
         />
-        <Route path="/register" element={user ? <Cinemaven /> : <Register />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/favourite"
           element={user ? <Favourite /> : <LoginPrompt />}

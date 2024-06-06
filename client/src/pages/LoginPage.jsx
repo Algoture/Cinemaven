@@ -1,105 +1,102 @@
-import { firebaseAuth } from "../Index";
-import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { firebaseAuth, OAuth, EmailPassword } from "../Index";
+import { useState, useEffect } from "react";
+import {
+  signInWithEmailAndPassword,
+  isSignInWithEmailLink,
+  signInWithEmailLink,
+} from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import "../css/Pages.scss";
-
+import useAuthHandlers from "../utils/OAuths";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { handleGoogleSignIn, handleFBSignIn, handleGitHubSignIn } =
+    useAuthHandlers();
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    if (isSignInWithEmailLink(firebaseAuth, window.location.href)) {
+      let email = window.localStorage.getItem("emailForSignIn");
+      if (!email) {
+        email = window.prompt("Please provide your email for confirmation");
+      }
+      signInWithEmailLink(firebaseAuth, email, window.location.href)
+        .then((result) => {
+          window.localStorage.removeItem("emailForSignIn");
+          if (result.user.emailVerified) {
+            navigate("/cinemaven");
+          } else {
+            toast.error("Please verify your email!");
+          }
+        })
+        .catch(() => {
+          toast.error("Error verifying email link");
+        });
+    }
+  }, [firebaseAuth, navigate]);
+
   async function loginUser(event) {
     event.preventDefault();
     try {
       setLoading(true);
-      await signInWithEmailAndPassword(firebaseAuth, email, password);
-      navigate("/cinemaven");
+      const userCredential = await signInWithEmailAndPassword(
+        firebaseAuth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      if (user.emailVerified) {
+        navigate("/cinemaven");
+      } else {
+        toast.error("Please verify your email!");
+      }
     } catch (error) {
       const errorMessage = error.message;
       if (
-        errorMessage === "Firebase: Error (auth/invalid-login-credentials)."
+        errorMessage.includes("auth/wrong-password") ||
+        errorMessage.includes("auth/user-not-found")
       ) {
+        toast.error("Invalid Email Or Password");
+      } else {
+        toast.error("Login Failed");
         toast.error("Invalid Email Or Password");
       }
     } finally {
       setLoading(false);
+      setEmail("");
+      setPassword("");
     }
-    setEmail("");
-    setPassword("");
   }
-
+  const emailPasswordProps = {
+    email,
+    setEmail,
+    password,
+    showPassword,
+    setPassword,
+    toggleShowPassword,
+    loading,
+    forgot: true,
+    auth: "Login",
+  };
   return (
     <>
       <div className="loginPage">
         <div className="loginCard">
-          <p>Welcome Back !</p>
-          <form
-            action=""
-            className="AuthForm"
-            method="post"
-            onSubmit={loginUser}
-          >
-            <div className="email">
-              <img src="email.png" alt="" />
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter Email"
-                required
-                autoFocus
-                autoComplete="on"
-              />
-            </div>
-            <div className="password">
-              <img className="passwordimg" src="password.png" alt="" />
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter Password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                id="password"
-                autoComplete="current-password"
-              />
-              <img
-                src={showPassword ? "closed-eye.png" : "open-eye.png"}
-                alt=""
-                className="showpasswordicon"
-                onClick={toggleShowPassword}
-              />
-            </div>
-            <label className="passwordforgot">
-              <NavLink to="/forgotPassword">Forgot Password?</NavLink>
-            </label>
-            <button type="submit" disabled={loading} id="submit">
-              {loading ? (
-                <div className="authloading">
-                  <div className="authloader"></div>
-                </div>
-              ) : (
-                "Login"
-              )}
-            </button>
-            <h2>Or Sign In With</h2>
-            <div id="signInWith">
-              <div className="google">
-                <img src="google.png" alt="" />
-                Continue With Google
-              </div>
-              <div className="facebook">
-                <img src="facebook.png" alt="" />
-                Continue With FaceBook
-              </div>
-            </div>
+          <p>Welcome Back!</p>
+          <form className="AuthForm" onSubmit={loginUser}>
+            <EmailPassword {...emailPasswordProps} />
+            <OAuth
+              handleGoogleSignIn={handleGoogleSignIn}
+              handleFBSignIn={handleFBSignIn}
+              handleGitHubSignIn={handleGitHubSignIn}
+            />
           </form>
           <span>
             Don't have an account? <NavLink to="/register">Register</NavLink>

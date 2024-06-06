@@ -132,7 +132,7 @@
   z-index: -1;
 }
 
-.loginCard {
+.loginCard,.registerCard {
   width: clamp(300px, 50%, 400px);
   height: clamp(500px, 70%, 700px);
   background-color: rgba(53, 53, 53, 0.927);
@@ -140,149 +140,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  .email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    background-color: var(--secondary);
-    border-radius: 10px;
-    img {
-      margin-left: 0.5rem;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-  }
-  .password {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    border-radius: 10px;
-    background-color: var(--secondary);
-    .passwordimg {
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-left: 0.5rem;
-      cursor: default;
-    }
-    .showpasswordicon {
-      height: 2rem;
-      width: 2rem;
-      margin-right: 1rem;
-      cursor: pointer;
-    }
-  }
-  #signInWith {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    .google,
-    .facebook {
-      cursor: pointer;
-      background-color: var(--secondary);
-      width: 70%;
-      height: 2.7rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      img {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-  }
-  .passwordforgot {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
   h2 {
     color: var(--secondary);
-  }
-  #submit {
-    width: 90%;
   }
 }
 
-.registerCard {
-  width: clamp(350px, 70%, 400px);
-  height: clamp(400px, 95%, 700px);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: rgba(53, 53, 53, 0.927);
-  border: 1px solid rgba(209, 213, 219, 0.3);
-  .email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    background-color: var(--secondary);
-    border-radius: 10px;
-    img {
-      margin-left: 0.5rem;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-  }
-  .password {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    border-radius: 10px;
-    background-color: var(--secondary);
-    .passwordimg {
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-left: 0.5rem;
-      cursor: default;
-    }
-    .showpasswordicon {
-      height: 2rem;
-      width: 2rem;
-      margin-right: 1rem;
-      cursor: pointer;
-    }
-  }
-  h2 {
-    color: var(--secondary);
-  }
-  #submit {
-    width: 90%;
-  }
-  #signInWith {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    .google,
-    .facebook {
-      cursor: pointer;
-      background-color: var(--secondary);
-      width: 70%;
-      height: 2.7rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      img {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-  }
-}
 
 .searchPage {
   margin-left: 4vw;

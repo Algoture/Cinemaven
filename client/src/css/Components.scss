@@ -3,7 +3,74 @@
   --secondary: #fff;
   --accent: #ffe24b;
 }
+#emailPassword {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 
+  .email,
+  .password {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    img {
+      margin-left: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    input {
+      flex-grow: 1;
+    }
+  }
+  .password {
+    .passwordimg {
+      cursor: default;
+    }
+    .showpasswordicon {
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+  }
+  .passwordforgot {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+  #submit {
+    width: 90%;
+  }
+}
+
+#oAuth {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  .google,
+  .facebook,
+  .github {
+    cursor: pointer;
+    background-color: var(--secondary);
+    width: clamp(250px, 60%, 450px);
+    height: 2.7rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
 .carousel {
   display: flex;
   flex-direction: row;
@@ -123,8 +190,10 @@
   .authloader {
     width: 30px;
     aspect-ratio: 2;
-    --first: no-repeat radial-gradient(circle closest-side, var(--secondary) 90%, #0000);
-    --second: no-repeat radial-gradient(circle closest-side, var(--primary) 90%, #0000);
+    --first: no-repeat
+      radial-gradient(circle closest-side, var(--secondary) 90%, #0000);
+    --second: no-repeat
+      radial-gradient(circle closest-side, var(--primary) 90%, #0000);
     background: var(--second) 0% 50%, var(--first) 50% 50%,
       var(--second) 100% 50%;
     background-size: calc(100% / 3) 50%;
@@ -142,8 +211,10 @@
   .loader {
     width: 60px;
     aspect-ratio: 2;
-    --first: no-repeat radial-gradient(circle closest-side, var(--accent) 90%, #0000);
-    --second: no-repeat radial-gradient(circle closest-side, var(--primary) 90%, #0000);
+    --first: no-repeat
+      radial-gradient(circle closest-side, var(--accent) 90%, #0000);
+    --second: no-repeat
+      radial-gradient(circle closest-side, var(--primary) 90%, #0000);
     background: var(--second) 0% 50%, var(--first) 50% 50%,
       var(--second) 100% 50%;
     background-size: calc(100% / 3) 50%;
