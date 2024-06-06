@@ -74,9 +74,9 @@ const Register = () => {
             />
             <EmailPassword {...emailPasswordProps} />
             <OAuth
-              handleGoogleSignIn={handleGoogleSignIn}
-              handleFBSignIn={handleFBSignIn}
-              handleGitHubSignIn={handleGitHubSignIn}
+              google={handleGoogleSignIn}
+              fb={handleFBSignIn}
+              github={handleGitHubSignIn}
             />
           </form>
           <span>

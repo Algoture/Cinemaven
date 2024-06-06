@@ -94,9 +94,9 @@ const LoginPage = () => {
           <form className="AuthForm" onSubmit={loginUser}>
             <EmailPassword {...emailPasswordProps} />
             <OAuth
-              handleGoogleSignIn={handleGoogleSignIn}
-              handleFBSignIn={handleFBSignIn}
-              handleGitHubSignIn={handleGitHubSignIn}
+              google={handleGoogleSignIn}
+              fb={handleFBSignIn}
+              github={handleGitHubSignIn}
             />
           </form>
           <span>
