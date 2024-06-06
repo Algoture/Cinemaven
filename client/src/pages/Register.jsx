@@ -17,8 +17,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { handleGoogleSignIn, handleFBSignIn, handleGitHubSignIn } =
-    useAuthHandlers();
+  const { googleSignIn, fBSignIn, gitHubSignIn } = useAuthHandlers();
   const navigate = useNavigate();
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -42,9 +41,11 @@ const Register = () => {
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
       await updateProfile(firebaseAuth.currentUser, { displayName: name });
       await sendEmailVerification(firebaseAuth.currentUser);
-      navigate("/login");
       toast.success("Verification email sent!");
-      alert("Please Verify Your Email !");
+      toast.success("Please Verify Your Email !");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (error) {
       const errorMessage = error.message;
       if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
@@ -73,11 +74,7 @@ const Register = () => {
               required
             />
             <EmailPassword {...emailPasswordProps} />
-            <OAuth
-              google={handleGoogleSignIn}
-              fb={handleFBSignIn}
-              github={handleGitHubSignIn}
-            />
+            <OAuth google={googleSignIn} fb={fBSignIn} github={gitHubSignIn} />
           </form>
           <span>
             Already Registered? <NavLink to="/login">Login</NavLink>

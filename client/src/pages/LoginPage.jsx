@@ -16,8 +16,7 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { handleGoogleSignIn, handleFBSignIn, handleGitHubSignIn } =
-    useAuthHandlers();
+  const { googleSignIn, fBSignIn, gitHubSignIn } = useAuthHandlers();
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -32,7 +31,12 @@ const LoginPage = () => {
         .then((result) => {
           window.localStorage.removeItem("emailForSignIn");
           if (result.user.emailVerified) {
-            navigate("/cinemaven");
+            toast.success(
+              `Welcome Back ${firebaseAuth.currentUser.displayName} !`
+            );
+            setTimeout(() => {
+              navigate("/cinemaven");
+            }, 4000);
           } else {
             toast.error("Please verify your email!");
           }
@@ -54,7 +58,10 @@ const LoginPage = () => {
       );
       const user = userCredential.user;
       if (user.emailVerified) {
-        navigate("/cinemaven");
+        toast.success(`Welcome Back ${firebaseAuth.currentUser.displayName} !`);
+        setTimeout(() => {
+          navigate("/cinemaven");
+        }, 2000);
       } else {
         toast.error("Please verify your email!");
       }
@@ -93,11 +100,7 @@ const LoginPage = () => {
           <p>Welcome Back!</p>
           <form className="AuthForm" onSubmit={loginUser}>
             <EmailPassword {...emailPasswordProps} />
-            <OAuth
-              google={handleGoogleSignIn}
-              fb={handleFBSignIn}
-              github={handleGitHubSignIn}
-            />
+            <OAuth google={googleSignIn} fb={fBSignIn} github={gitHubSignIn} />
           </form>
           <span>
             Don't have an account? <NavLink to="/register">Register</NavLink>

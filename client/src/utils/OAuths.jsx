@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 
 const useAuthHandlers = () => {
   const navigate = useNavigate();
-  const handleGoogleSignIn = async () => {
+  const googleSignIn = async () => {
     try {
       const googleAuth = new GoogleAuthProvider();
       await signInWithPopup(firebaseAuth, googleAuth);
@@ -19,7 +19,7 @@ const useAuthHandlers = () => {
       toast.error("Google Sign-In Failed");
     }
   };
-  const handleFBSignIn = async () => {
+  const fBSignIn = async () => {
     try {
       const fbAuth = new FacebookAuthProvider();
       await signInWithPopup(firebaseAuth, fbAuth);
@@ -28,7 +28,7 @@ const useAuthHandlers = () => {
       toast.error("Facebook Sign-In Failed");
     }
   };
-  const handleGitHubSignIn = async () => {
+  const gitHubSignIn = async () => {
     try {
       const githubAuth = new GithubAuthProvider();
       await signInWithPopup(firebaseAuth, githubAuth);
@@ -37,7 +37,7 @@ const useAuthHandlers = () => {
       toast.error("GitHub Sign-In Failed");
     }
   };
-  return { handleGoogleSignIn, handleFBSignIn, handleGitHubSignIn };
+  return { googleSignIn, fBSignIn, gitHubSignIn };
 };
 
 export default useAuthHandlers;

@@ -51,7 +51,37 @@
     transition: all 0.3s ease;
   }
 }
-
+#forgotPasswordPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #1f1e2e, #ffe14bdc);
+  .forgotCard {
+    width: clamp(300px, 30%, 400px);
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 20px;
+    background-color: #00000080;
+    .email {
+      display: flex;
+      align-items: center;
+      width: clamp(250px, 50%, 400px);
+      background-color: var(--secondary);
+      border-radius: 10px;
+      img {
+        margin-left: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}
 .teaserpage {
   background-image: url("https://images.unsplash.com/photo-1595769816263-9b910be24d5f?q=80&w=2958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ");
   background-size: cover;
@@ -132,7 +162,8 @@
   z-index: -1;
 }
 
-.loginCard,.registerCard {
+.loginCard,
+.registerCard {
   width: clamp(300px, 50%, 400px);
   height: clamp(500px, 70%, 700px);
   background-color: rgba(53, 53, 53, 0.927);
@@ -144,7 +175,6 @@
     color: var(--secondary);
   }
 }
-
 
 .searchPage {
   margin-left: 4vw;
