@@ -5,6 +5,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <div id="landingPage">
+      <img src="Logo.png" alt="" />
       <h1>
         Welcome To&nbsp;<span>Cinemaven</span>
       </h1>

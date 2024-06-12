@@ -7,7 +7,7 @@
 #landingPage {
   width: 100vw;
   height: 100vh;
-  background-color: var(--primary);
+  background-color: #f0f4f9;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,15 +15,15 @@
   text-align: center;
   h1 {
     font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
-    color: var(--secondary);
+    color: var(--primary);
     span {
-      background: linear-gradient(to right, #fff, #ffe24b, #fff, #ffe24b, #fff);
+      background: linear-gradient(to left,#000000, #ffe24b, #000000);
       background-clip: text;
-      // display: inline;
+      display: inline;
       color: transparent;
       font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
       background-size: 200% auto;
-      animation: animated 5s infinite alternate;
+      animation: animated 4s infinite alternate;
     }
 
     @keyframes animated {
@@ -38,14 +38,14 @@
   .getStart {
     cursor: pointer;
     padding: 1rem;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     border: none;
     border-radius: 2px;
-    color: var(--primary);
+    color: var(--secondary);
     border-radius: 5px;
   }
   .getStart:hover {
-    background-color: var(--secondary);
+    background-color: var(--accent);
     color: #1d1d1d;
     transform: scale(1.2);
     transition: all 0.3s ease;

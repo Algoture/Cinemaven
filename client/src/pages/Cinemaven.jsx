@@ -5,7 +5,6 @@ import "react-multi-carousel/lib/styles.css";
 import { signOut } from "firebase/auth";
 import { movies } from "../utils/Data";
 import "../css/Cinemaven.scss";
-import "../css/Pages.scss";
 import React from "react";
 
 const Cinemaven = React.memo(() => {
@@ -101,7 +100,7 @@ const Cinemaven = React.memo(() => {
                         <button onClick={() => handleButtonClick(movie)}>
                           Watch
                         </button>
-                        {/* <button className="add-list">Add To List</button> */}
+                        <button className="add-list">Add To List</button>
                       </div>
                     </div>
                   ))}
