@@ -12,8 +12,7 @@ import "./css/Components.scss";
 import "./css/MediaQueries.scss";
 import {
   TrailerPage,
-  LoginPage,
-  Register,
+  AllAuthPage,
   ProfilePage,
   Favourite,
   Cinemaven,
@@ -26,6 +25,7 @@ import {
   firebaseAuth,
   ForgotPasswordPage,
   TeaserPage,
+  EmailAuthPage,
 } from "./Index";
 function App() {
   const user = useSelector(selectUser);
@@ -60,12 +60,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={user ? <Cinemaven /> : <LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<AllAuthPage />} />
         <Route
           path="/forgotPassword"
           element={user ? <Cinemaven /> : <ForgotPasswordPage />}
         />
-        <Route path="/register" element={<Register />} />
+        <Route path="/emailauth" element={<EmailAuthPage />} />
         <Route
           path="/favourite"
           element={user ? <Favourite /> : <LoginPrompt />}

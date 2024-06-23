@@ -17,13 +17,13 @@
     font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
     color: var(--primary);
     span {
-      background: linear-gradient(to left,#000000, #ffe24b, #000000);
+      background: linear-gradient(to left,#000000 10%, #ffd91c, #000000);
       background-clip: text;
       display: inline;
       color: transparent;
       font-size: clamp(3rem, 1.7179rem + 4.1026vw, 5rem);
       background-size: 200% auto;
-      animation: animated 4s infinite alternate;
+      animation: animated 3s infinite alternate;
     }
 
     @keyframes animated {
@@ -165,15 +165,12 @@
 .loginCard,
 .registerCard {
   width: clamp(300px, 50%, 400px);
-  height: clamp(500px, 70%, 700px);
+  padding: 2rem 0;
   background-color: rgba(53, 53, 53, 0.927);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  h2 {
-    color: var(--secondary);
-  }
+  gap: 1rem;
 }
 
 .searchPage {

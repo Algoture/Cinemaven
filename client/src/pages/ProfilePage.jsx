@@ -25,7 +25,7 @@ const ProfilePage = () => {
                 <h1 className="username">
                   {firebaseAuth.currentUser.displayName}
                 </h1>
-                <small className="email">
+                <small className="profile-email">
                   {firebaseAuth.currentUser.email}
                 </small>
                 <button onClick={handleClick} className="logoutbutton">

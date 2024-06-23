@@ -129,14 +129,6 @@ const moviesData = [
   },
   {
     image:
-      "https://m.media-amazon.com/images/M/MV5BZWI1ZDAxOWYtNDlmNy00NTkzLTlhZDEtMTcwMmZjOTY2NjBjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.300_.jpg",
-    releaseDate: "July 19, 2024",
-    title: "Twisters",
-    trailerLength: "2:00",
-    videoLink: "https://www.imdb.com//title/tt12584954/?ref_=vi_tr_tr_tt_16",
-  },
-  {
-    image:
       "https://m.media-amazon.com/images/M/MV5BZmU0MmI2MmQtN2ZjZC00MjU4LWE3YTUtMWZhOWM3NDFjODg3XkEyXkFqcGdeQXVyMDM2NDM2MQ@@.300_.jpg",
     releaseDate: "June 7, 2024",
     title: "Bad Boys: Ride or Die",
@@ -161,27 +153,11 @@ const moviesData = [
   },
   {
     image:
-      "https://m.media-amazon.com/images/M/MV5BNDZhYjM1NDctOGY1My00ZWE4LWI5NDktNDVlMDAxZjcwOTEwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.300_.jpg",
-    releaseDate: "June 28, 2024",
-    title: "A Quiet Place: Day One",
-    trailerLength: "1:39",
-    videoLink: "https://www.imdb.com//title/tt13433802/?ref_=vi_tr_tr_tt_20",
-  },
-  {
-    image:
       "https://m.media-amazon.com/images/M/MV5BMTkwNmM3ZWMtNDY1Ni00YmFhLTg2ZTgtZmE3NTBmOGUwOTUyXkEyXkFqcGdeQXVyOTI3MzI4MzA@.300_.jpg",
     releaseDate: "May 1, 2024",
     title: "Heeramandi: The Diamond Bazaar",
     trailerLength: "3:02",
     videoLink: "https://www.imdb.com//title/tt15204292/?ref_=vi_tr_tr_tt_21",
-  },
-  {
-    image:
-      "https://m.media-amazon.com/images/M/MV5BNDZhYjM1NDctOGY1My00ZWE4LWI5NDktNDVlMDAxZjcwOTEwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.300_.jpg",
-    releaseDate: "May 2, 2024",
-    title: "A Man in Full",
-    trailerLength: "1:47",
-    videoLink: "https://www.imdb.com//title/tt15845610/?ref_=vi_tr_tr_tt_22",
   },
   {
     image:

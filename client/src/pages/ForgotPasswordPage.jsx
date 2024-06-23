@@ -1,7 +1,7 @@
 import { sendPasswordResetEmail } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { firebaseAuth } from "../Index";
+import { BackButton, firebaseAuth } from "../Index";
 import { useState } from "react";
 import "../css/Pages.scss";
 
@@ -23,6 +23,7 @@ const ForgotPasswordPage = () => {
   }
   return (
     <div id="forgotPasswordPage">
+      <BackButton/>
       <div className="forgotCard">
         <div className="email">
           <img src="email.png" alt="" />
