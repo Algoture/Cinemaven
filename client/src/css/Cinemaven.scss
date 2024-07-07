@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 :root {
   --primary: #1d1d1d;
   --secondary: #fff;
@@ -62,11 +63,8 @@ body {
     width: 100%;
     position: absolute;
     top: 0;
-    // left: 4vw;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: flex-start;
     color: white;
     padding: 10vw;
     border-image: fill 0 linear-gradient(180deg, rgba(0, 0, 0, 0.292), #00000076);
@@ -113,10 +111,11 @@ body {
           }
         }
         h1 {
-          font-size: 3.5rem;
+          font-size: 5rem;
           color: var(--secondary);
-          letter-spacing: -0.2rem;
-          font-family: "Poppins";
+          letter-spacing: -3%;
+          font-weight: 100;
+          font-family: "Staatliches";
         }
 
         p {

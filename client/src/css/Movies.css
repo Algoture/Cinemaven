@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 :root {
   --primary: #1d1d1d;
   --secondary: #fff;
@@ -78,22 +79,30 @@ body {
   text-transform: uppercase;
   padding-top: 20vh;
   padding-left: 10vh;
-  font-size: 3.8rem;
-  line-height: 3.5rem;
-  word-spacing: 0.4rem;
+  font-family: "Staatliches", sans-serif;
+  font-size: 6rem;
+  font-weight: 100;
+  line-height: 6rem;
+  word-spacing: .1rem;
+  letter-spacing: -3%;
+  color: #fff;
 }
 
 .movieDetails h3 {
   padding-left: 5vw;
   padding-top: 5vh;
+  font-family:sans-serif;
+  font-size: 1.2rem;
   color: grey;
 }
 
 .movieDetails p {
   padding-left: 5vw;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: grey;
   text-align: left;
+  font-family:sans-serif;
+  line-height: 132%;
 }
 
 .movie-card {
@@ -196,4 +205,7 @@ body {
 .content-card .content h1 {
   font-weight: 700;
   font-size: 0.7rem;
+}
+.content-card .content b{
+  color: #ffffff36;
 }
