@@ -109,8 +109,8 @@ const Cinemaven = React.memo(() => {
             </div>
           </div>
         </div>
+      <MainCarousel start={0} end={10} heading={""} kilas="kilas"/>
       </div>
-      <MainCarousel start={0} end={10} heading={"Popular Now"} />
       <MainCarousel start={10} end={20} heading={"Latest Releases"} />
       <MainCarousel start={20} end={30} heading={"Trending"} />
       <MainCarousel start={30} end={40} heading={"Top Rated On IMDB"} />

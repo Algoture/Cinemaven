@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
 import { moviesData } from "../../utils/Data.js";
 
-const MainCarousel = ({ heading, start, end }) => {
+const MainCarousel = ({ heading, start, end, kilas }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -14,7 +14,7 @@ const MainCarousel = ({ heading, start, end }) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 7,
+      items: 6,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -28,7 +28,7 @@ const MainCarousel = ({ heading, start, end }) => {
 
   return (
     <>
-      <div className="section1">
+      <div className={`section1 ${kilas}`}>
         <p className="Trending">{heading}</p>
         {loading ? (
           <div className="loading">
