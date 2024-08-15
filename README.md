@@ -23,12 +23,20 @@ Install Dependencies for Client:
 ```bash
 npm install
 ```
+<<<<<<< HEAD
+To Start Client Application:
+```bash
+npm run dev
+
+```
+=======
 
 To Start the Client Application:
 ```bash
 npm run dev
 ```
 
+>>>>>>> version-1.0
 **Usage**
 1.  **Sign Up or Log In**: Create an account or log in to your existing account.
 2.  **Browse Content**: Explore the vast library of movies and shows.
