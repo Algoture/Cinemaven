@@ -1,7 +1,7 @@
 [
   {
     "bgimage": "https://images8.alphacoders.com/134/1344546.jpeg",
-    "image": "kung fu panda 4.jpg",
+    "image": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723721697/kung_fu_panda_4_ce5yfi.jpg",
     "trailer": "_inKs4eeHiI",
     "trailerLength": "2:27",
     "title": "Kung Fu Panda 4",
@@ -11,8 +11,8 @@
     "description": "Po, the beloved dragon warrior, faces a new challenge when a powerful villain threatens the peace of the Valley of Peace, leading him on an epic journey of self-discovery and kung fu mastery. Horror / Thriller"
   },
   {
-    "bgimage": "bladerunner.jpg",
-    "image": "blade.jpg",
+    "bgimage": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723722006/bladerunner_gtdnur.jpg",
+    "image": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723722006/blade_zneg9e.jpg",
     "trailer": "gCcx85zbxz4",
     "trailerLength": "2:22",
     "title": "Blade Runner 2049",
@@ -22,8 +22,8 @@
     "description": "In a future where humans and intelligent apes coexist precariously, young leader Nova must navigate rising tensions to prevent a catastrophic war. Action | Sci-Fi"
   },
   {
-    "bgimage": "terminatorbgimage.jpg",
-    "image": "terminator.jpg",
+    "bgimage": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723722009/terminatorbgimage_w3ukfs.jpg",
+    "image": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723722007/terminator_j0qtmb.jpg",
     "trailer": "jNU_jrPxs-0",
     "trailerLength": "2:31",
     "title": "Terminator Genisys",
@@ -33,8 +33,8 @@
     "description": "A cyborg assassin targets the mother of a future resistance leader, triggering a race against time as a soldier from the future is deployed to protect her. Action | Adventure | Sci-Fi"
   },
   {
-    "bgimage": "dunebgimage.jpg",
-    "image": "dune.jpg",
+    "bgimage": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723722008/dunebgimage_gi2awv.jpg",
+    "image": "https://res.cloudinary.com/dtwoxusxz/image/upload/v1723722006/dune_wbxi7x.jpg",
     "trailer": "n9xhJrPXop4",
     "trailerLength": "3:05",
     "title": "Dune",
