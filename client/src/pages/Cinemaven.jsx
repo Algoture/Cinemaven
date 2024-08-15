@@ -11,7 +11,6 @@ const Cinemaven = React.memo(() => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3000/api/movies").then((res) => {
-      console.log(res.data.myData);
       setMovies(res.data.myData);
     });
   }, []);
