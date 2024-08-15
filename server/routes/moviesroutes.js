@@ -1,4 +1,6 @@
+import { getMovies, getMoviesData } from "../controllers/medias.js";
 import express from "express";
-import { getMovies } from "../controllers/medias";
 const router = express.Router();
 router.route("/").get(getMovies);
+router.route("/moviesData").get(getMoviesData);
+export default router;
