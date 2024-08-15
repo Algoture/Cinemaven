@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+:root {
+  --primary: #1d1d1d;
+  --secondary: #fff;
+  --accent: #ffe24b;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  transition: all 0.4s;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.MoviesPage {
+  width: 100%;
+  height: 100%;
+  margin-left: 4vw;
+}
+.components {
+  width: 100%;
+  height: 100%;
+}
+.gradient {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 4vw;
+  background: linear-gradient(
+      90deg,
+      rgba(45, 45, 45, 1) 0%,
+      rgba(45, 45, 45, 0.7441570378151261) 50%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--poster-url);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
+
+.trailer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.iFrame {
+  z-index: 99;
+  width: 90vw;
+  border-radius: 25px;
+  height: 80vh;
+}
+.iFrame2 {
+  z-index: 99;
+  width: 90vw;
+  border-radius: 25px;
+  height: 80vh;
+}
+
+.movieDetails {
+  margin-left: 4vw;
+  /* border:2px solid red; */
+  width: 50vw;
+  height: 100vh;
+}
+
+.movieDetails h1 {
+  text-transform: uppercase;
+  padding-top: 20vh;
+  padding-left: 10vh;
+  font-family: "Staatliches", sans-serif;
+  font-size: 6rem;
+  font-weight: 100;
+  line-height: 6rem;
+  word-spacing: .1rem;
+  letter-spacing: -3%;
+  color: #fff;
+}
+
+.movieDetails h3 {
+  padding-left: 5vw;
+  padding-top: 5vh;
+  font-family:sans-serif;
+  font-size: 1.2rem;
+  color: grey;
+}
+
+.movieDetails p {
+  padding-left: 5vw;
+  font-size: 1rem;
+  color: grey;
+  text-align: left;
+  font-family:sans-serif;
+  line-height: 132%;
+}
+
+.movie-card {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  width: 28vw;
+  height: 40vh;
+  border-radius: 35px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(17, 17, 17, 0.5);
+  margin-left: 88vh;
+}
+
+.card-trailer {
+  position: fixed;
+  margin-top: 0vh;
+}
+
+.card-movie {
+  position: fixed;
+  margin-top: 50vh;
+}
+
+.movie-card .content-card,
+.movie-card .watch-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 35px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie-card .watch-card {
+  position: absolute;
+  background: var(--accent);
+  z-index: -1;
+}
+
+.movie-card .watch-card button {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translate(-50%, 0%);
+  border: none;
+  outline: none;
+  background: none;
+  color: #222;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.movie-card-second .watch-card button:hover {
+  color: #ff0000;
+}
+
+.movie-card .content-card {
+  padding: 20px 25px;
+}
+
+.movie-card .content-card:hover {
+  top: -50px;
+}
+
+.movie-card .content-card:hover img {
+  transform: scale(1.2);
+}
+
+.movie-card .content-card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.movie-card .content-card .shadow {
+  width: 100%;
+  height: 170px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #1111117d;
+  box-shadow: 0 0 10px 20px #11111198;
+  filter: blur(20px);
+}
+
+.movie-card .content-card .content {
+  position: absolute;
+  color: #eee;
+  bottom: 20px;
+}
+.content-card .content h1 {
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+.content-card .content b{
+  color: #ffffff36;
+}

@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+:root {
+  --primary: #1d1d1d;
+  --secondary: #fff;
+  --accent: #ffe24b;
+}
+body {
+  height: 100%;
+  width: 100%;
+  // overflow-x: hidden;
+}
+
+.cinemaven {
+  height: 100vh;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  .homelogoutbutton {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
+  }
+  .homelogoutbutton:hover {
+    background-color: #fff;
+    color: #1d1d1d;
+  }
+  .bg-img {
+    .carousel-bgimg {
+      height: 100vh;
+      width: 100vw;
+      img {
+        height: 80%;
+        width: 100%;
+      }
+    }
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    .carousel-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      img {
+        margin-left: 4vw;
+        height: 105vh;
+        width: 100vw;
+      }
+    }
+  }
+
+  .main {
+    height: 100%;
+    width: 100%;
+  }
+
+  .trending-movie {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10vw;
+    border-image: fill 0 linear-gradient(180deg, rgba(0, 0, 0, 0.292), #00000076);
+    box-sizing: border-box;
+    .content {
+      height: 100vh;
+      width: 70%;
+      top: 0;
+      left: 2vw;
+      position: absolute;
+      padding: 5vw;
+      .options {
+        display: flex;
+        align-items: flex-start;
+        gap: 1vw;
+        .navlinks::after {
+          content: "";
+          width: 100%;
+          transform: scale(0, 1);
+          position: absolute;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #ffe24b;
+          left: 0;
+          bottom: 0;
+          transition: transform 0.3s ease;
+        }
+        .navlinks {
+          position: relative;
+          color: white;
+        }
+        .navlinks:hover::after {
+          transform: scale(1, 1);
+        }
+      }
+      .movie {
+        margin-top: 5vh;
+        .movie-content {
+          .trailer-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+          }
+        }
+        h1 {
+          font-size: 5rem;
+          color: var(--secondary);
+          letter-spacing: -3%;
+          font-weight: 100;
+          font-family: "Staatliches";
+        }
+
+        p {
+          font-size: 0.85rem;
+          text-align: left;
+        }
+        .year {
+          color: #ffe24b;
+        }
+        .movie-type {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .content {
+      z-index: 2;
+    }
+  }
+}
+
+.login {
+  height: 10vh;
+  width: 10vw;
+
+  button {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 5px;
+    z-index: 2;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-weight: 700;
+  }
+}
