@@ -1,9 +1,15 @@
 import router from "./routes/moviesroutes.js";
 import connectDb from "./db/connect.js";
 import express from "express";
+import cors from "cors";
 import { config as configDotenv } from "dotenv";
 configDotenv();
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 const port = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   res.send("Hello World!");
