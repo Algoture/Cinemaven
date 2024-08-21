@@ -12,9 +12,7 @@ app.get("/", (req, res) => {
 app.use("/api/movies", router);
 const start = async () => {
   await connectDb(process.env.MONGO_URI);
-  app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-  });
+  app.listen(port);
 };
 start();
 export { app };
