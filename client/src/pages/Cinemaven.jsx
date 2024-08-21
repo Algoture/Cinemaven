@@ -3,11 +3,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { signOut } from "firebase/auth";
-import { movies } from "../utils/Data";
+import axios from "axios";
 import "../css/Cinemaven.scss";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Cinemaven = React.memo(() => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/movies").then((res) => {
+      setMovies(res.data.myData);
+    });
+  }, []);
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(firebaseAuth);
@@ -109,7 +115,7 @@ const Cinemaven = React.memo(() => {
             </div>
           </div>
         </div>
-      <MainCarousel start={0} end={10} heading={""} kilas="kilas"/>
+        <MainCarousel start={0} end={10} heading={""} kilas="kilas" />
       </div>
       <MainCarousel start={10} end={20} heading={"Latest Releases"} />
       <MainCarousel start={20} end={30} heading={"Trending"} />
