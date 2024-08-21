@@ -7,7 +7,7 @@ const MainCarousel = ({ heading, start, end, kilas }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    axios.get("http://localhost:3000/api/movies/moviesData").then((res) => {
+    axios.get("https://cinemavenserver.onrender.com/api/movies/moviesData").then((res) => {
       setMovies(res.data.myData);
       setLoading(false);
     });

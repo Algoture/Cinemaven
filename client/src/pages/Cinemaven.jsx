@@ -10,7 +10,7 @@ import React, { useState, useEffect } from "react";
 const Cinemaven = React.memo(() => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/api/movies").then((res) => {
+    axios.get("https://cinemavenserver.onrender.com/api/movies").then((res) => {
       setMovies(res.data.myData);
     });
   }, []);
@@ -87,8 +87,9 @@ const Cinemaven = React.memo(() => {
               <div className="movie">
                 <Carousel
                   responsive={responsive}
-                  keyBoardControl={true}
+                  showDots={false}
                   autoPlay={true}
+                  partialVisible={false}
                   containerClass="movie"
                   pauseOnHover={false}
                   autoPlaySpeed={5000}
@@ -98,6 +99,7 @@ const Cinemaven = React.memo(() => {
                   removeArrowOnDeviceType={["mobile", "desktop"]}
                 >
                   {movies.map((movie, index) => (
+                    console.log(movie.title),
                     <div key={index} className="movie-content">
                       <h1 className="movie-name">{movie.title}</h1>
                       <p>{movie.description}</p>

@@ -10,7 +10,7 @@ const SearchPage = () => {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/movies/moviesData").then((res) => {
+    axios.get("https://cinemavenserver.onrender.com/api/movies/moviesData").then((res) => {
       setMovies(res.data.myData);
       setLoading(false);
     });
