@@ -89,7 +89,7 @@ function TrailerPage() {
               <iframe
                 className="iFrame2"
                 title="Movie player"
-                src={`https://www.2embed.cc/embed/${movie.moviecode}`}
+                // src={`https://www.2embed.cc/embed/${movie.moviecode}`}
                 // allowfullscreen
               ></iframe>
             </div>
