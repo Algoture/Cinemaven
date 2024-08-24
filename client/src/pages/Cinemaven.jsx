@@ -3,11 +3,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { signOut } from "firebase/auth";
-import { movies } from "../utils/Data";
+import axios from "axios";
 import "../css/Cinemaven.scss";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Cinemaven = React.memo(() => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios.get("https://cinemavenserver.onrender.com/api/movies").then((res) => {
+      setMovies(res.data.myData);
+    });
+  }, []);
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(firebaseAuth);
@@ -81,8 +87,9 @@ const Cinemaven = React.memo(() => {
               <div className="movie">
                 <Carousel
                   responsive={responsive}
-                  keyBoardControl={true}
+                  showDots={false}
                   autoPlay={true}
+                  partialVisible={false}
                   containerClass="movie"
                   pauseOnHover={false}
                   autoPlaySpeed={5000}
@@ -92,6 +99,7 @@ const Cinemaven = React.memo(() => {
                   removeArrowOnDeviceType={["mobile", "desktop"]}
                 >
                   {movies.map((movie, index) => (
+                    console.log(movie.title),
                     <div key={index} className="movie-content">
                       <h1 className="movie-name">{movie.title}</h1>
                       <p>{movie.description}</p>
@@ -109,7 +117,7 @@ const Cinemaven = React.memo(() => {
             </div>
           </div>
         </div>
-      <MainCarousel start={0} end={10} heading={""} kilas="kilas"/>
+        <MainCarousel start={0} end={10} heading={""} kilas="kilas" />
       </div>
       <MainCarousel start={10} end={20} heading={"Latest Releases"} />
       <MainCarousel start={20} end={30} heading={"Trending"} />

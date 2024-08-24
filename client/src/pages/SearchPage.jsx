@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Nav } from "../Index";
-import {moviesData} from "../utils/Data";
+import axios from "axios";
+
 const SearchPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,8 +10,10 @@ const SearchPage = () => {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
-    setMovies(moviesData);
-    setLoading(false);
+    axios.get("https://cinemavenserver.onrender.com/api/movies/moviesData").then((res) => {
+      setMovies(res.data.myData);
+      setLoading(false);
+    });
   }, []);
 
   const handleInputChange = (e) => {

@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBox from "./CarouselBox";
-import { moviesData } from "../../utils/Data.js";
-
+import axios from "axios";
 const MainCarousel = ({ heading, start, end, kilas }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setMovies(moviesData);
-    setLoading(false);
+    axios.get("https://cinemavenserver.onrender.com/api/movies/moviesData").then((res) => {
+      setMovies(res.data.myData);
+      setLoading(false);
+    });
   }, []);
   const responsive = {
     desktop: {
