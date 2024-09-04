@@ -35,7 +35,7 @@ const EmailPassword = ({
             placeholder="Enter Email"
             name="email"
             required
-            value="gadalew138@rogtat.com"
+            value={email}
             autoComplete="on"
             autoFocus
             onChange={(e) => setEmail(e.target.value)}
@@ -47,7 +47,7 @@ const EmailPassword = ({
             type={showPassword ? "text" : "password"}
             placeholder="Enter Password"
             name="password"
-            value="H0L@[0L@]20"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             id="password"
