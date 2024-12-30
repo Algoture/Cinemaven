@@ -1,34 +1,30 @@
-import { useEffect, useState } from "react";
-import Carousel from "react-multi-carousel";
+import { responsive1 } from "../../utils/carouselUtils";
+import { useQuery } from "@tanstack/react-query";
 import "react-multi-carousel/lib/styles.css";
+import Carousel from "react-multi-carousel";
 import CarouselBox from "./CarouselBox";
+import toast from "react-hot-toast";
 import axios from "axios";
-const MainCarousel = ({ heading, start, end, kilas }) => {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/api/movies/moviesData`)
-      .then((res) => {
-        setMovies(res.data.myData);
-        setLoading(false);
-      });
-  }, []);
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 6,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
-    },
-  };
 
+const MainCarousel = ({ heading, start, end, kilas }) => {
+  const fetchMovies = async () => {
+    const res = await axios.get(
+      `${import.meta.env.VITE_SERVER_URL}/api/movies/moviesData`
+    );
+    return res.data.myData;
+  };
+  const {
+    data: movies,
+    loading,
+    error,
+  } = useQuery({
+    queryKey: ["moviesData"],
+    queryFn: fetchMovies,
+    cacheTime: 600000,
+  });
+  if (!movies || movies.length <= 0) {
+    return toast.error("No Movies Found");
+  }
   return (
     <>
       <div className={`section1 ${kilas}`}>
@@ -39,7 +35,7 @@ const MainCarousel = ({ heading, start, end, kilas }) => {
           </div>
         ) : (
           <Carousel
-            responsive={responsive}
+            responsive={responsive1}
             rewindWithAnimation={true}
             autoPlay={true}
             infinite={true}

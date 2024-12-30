@@ -1,42 +1,39 @@
 import { firebaseAuth, MainCarousel, Nav } from "../Index";
+import { responsive2 } from "../utils/carouselUtils";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { signOut } from "firebase/auth";
-import axios from "axios";
 import "../css/Cinemaven.scss";
-import React, { useState, useEffect } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const Cinemaven = React.memo(() => {
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/api/movies`).then((res) => {
-      setMovies(res.data.myData);
-    });
-  }, []);
+const Cinemaven = () => {
+  const fetchMovies = async () => {
+    const res = await axios.get(
+      `${import.meta.env.VITE_SERVER_URL}/api/movies`
+    );
+    return res.data.myData;
+  };
+  const { data: movies, error } = useQuery({
+    queryKey: ["movies"],
+    queryFn: fetchMovies,
+    cacheTime: 600000,
+  });
+
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(firebaseAuth);
     navigate("/");
   };
+
   const handleButtonClick = (movie) => {
     navigate("/movies", { state: { movie } });
   };
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
-
+  if (!movies || movies.length <= 0) {
+    return toast.error("No Movies Found");
+  }
   return (
     <>
       <Nav />
@@ -46,7 +43,7 @@ const Cinemaven = React.memo(() => {
         </button>
         <div className="bg-img">
           <Carousel
-            responsive={responsive}
+            responsive={responsive2}
             showDots={false}
             autoPlay={true}
             partialVisible={false}
@@ -86,7 +83,7 @@ const Cinemaven = React.memo(() => {
 
               <div className="movie">
                 <Carousel
-                  responsive={responsive}
+                  responsive={responsive2}
                   showDots={false}
                   autoPlay={true}
                   partialVisible={false}
@@ -123,6 +120,6 @@ const Cinemaven = React.memo(() => {
       <MainCarousel start={30} end={40} heading={"Top Rated On IMDB"} />
     </>
   );
-});
+};
 
 export default Cinemaven;
