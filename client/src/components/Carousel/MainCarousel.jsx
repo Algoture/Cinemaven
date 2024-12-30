@@ -7,10 +7,12 @@ const MainCarousel = ({ heading, start, end, kilas }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    axios.get("https://cinemavenserver.onrender.com/api/movies/moviesData").then((res) => {
-      setMovies(res.data.myData);
-      setLoading(false);
-    });
+    axios
+      .get(`${import.meta.env.VITE_SERVER_URL}/api/movies/moviesData`)
+      .then((res) => {
+        setMovies(res.data.myData);
+        setLoading(false);
+      });
   }, []);
   const responsive = {
     desktop: {

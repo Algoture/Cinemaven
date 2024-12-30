@@ -92,6 +92,9 @@ VITE_APP_ID =
 # Required: Your firebase measurement id
 VITE_MEASUREMENT_ID = 
 
+# Required: Your Node.js server url (without '/' at end)
+VITE_SERVER_URL = 
+
 ```
 Start the client application:
 
@@ -124,6 +127,9 @@ npm install
 ```
 # Required: Assign any port number 
 PORT=
+
+# Required: Your Client app url (without '/' at end)
+CLIENT_URL= 
 
 # Required: Your MongoDB Cluster URI
 MONGO_URI=

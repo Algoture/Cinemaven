@@ -7,7 +7,7 @@ configDotenv();
 const app = express();
 app.use(
   cors({
-    origin: "https://cinemavenclient.onrender.com",
+    origin: `${process.env.CLIENT_URL}`,
   })
 );
 const port = process.env.PORT || 3000;
